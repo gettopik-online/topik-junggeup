@@ -104,7 +104,7 @@
         <h1>O'rta daraja so'zlari</h1>
       </div>
     </div>
-    <p class="lead">575 ta so'z — 5~8 (읽기), 9~12 va 13~16 (듣기). O'rta daraja (중급). Har raund 3 bosqich: tanishtiruv, variant tanlash, yozish.</p>
+    <p class="lead">899 ta so'z — 듣기 va 읽기 bo'limlari. O'rta daraja (중급). Har raund 3 bosqich: tanishtiruv, variant tanlash, yozish.</p>
     <div class="who" id="who"></div>
   </header>
   <main id="app"></main>
@@ -113,52 +113,79 @@
 
 <script>
 const SECTIONS = [
-{id:"read58",label:"5~8 · O'qish (읽기)",sets:[
-{id:"83",title:"83-TOPIK",sub:"5~8-savollar so'zlari",words:[["가볍다","yengil"],["신다","kiymoq (oyoq kiyim)"],["어떤","qanday, har qanday"],["길","yo'l"],["편하다","qulay"],["세상","dunyo"],["경험하다","boshdan kechirmoq, sinab ko'rmoq"],["매일","har kuni"],["정성","mehr, g'ayrat"],["담다","solmoq, jo qilmoq"],["더","yana, ko'proq"],["맛있다","mazali"],["자연","tabiat"],["얻다","olmoq"],["신선하다","yangi, taza"],["재료","masalliq, xomashyo"],["사용하다","ishlatmoq"],["웃다","kulmoq"],["얼굴","yuz"],["밝다","yorug', ochiq"],["인사","salom, salomlashish"],["모두","hamma"],["기분","kayfiyat"],["좋다","yaxshi"],["하루","bir kun"],["시작","boshlanish"],["승강장","perron (platforma)"],["뛰다","yugurmoq, sakramoq"],["출입문","kirish-chiqish eshigi"],["닫히다","yopilmoq"],["무리하게","zo'rma-zo'raki, majburan"],["타다","minmoq"]]},
-{id:"91",title:"91-TOPIK",sub:"5~8-savollar so'zlari",words:[["입속","og'iz ichi"],["치아","tish"],["사이사이","orasidagi bo'shliqlar"],["깨끗이","toza, tozalab"],["부드럽다","yumshoq"],["잘","yaxshi"],["닦다","tozalamoq, artmoq"],["아이들","bolalar"],["예쁘다","chiroyli, go'zal"],["꿈","orzu"],["희망","umid"],["키우다","o'stirmoq, tarbiyalamoq"],["곳","joy"],["부모","ota-ona"],["마음","dil, ko'ngil"],["보살피다","g'amxo'rlik qilmoq"],["계단","zinapoya"],["다니다","qatnamoq, yurmoq"],["운동하다","sport bilan shug'ullanmoq"],["우리","biz(ning)"],["몸","tana"],["실천하다","amalga oshirmoq, amal qilmoq"],["공연장","konsert zali"],["사진 촬영","surat olish"],["금지하다","taqiqlamoq"],["휴대 전화","mobil telefon"],["전원","quvvat, tok"],["끄다","o'chirmoq"],["진동","tebranish (vibratsiya)"]]},
-{id:"96",title:"96-TOPIK",sub:"5~8-savollar so'zlari",words:[["덮다","yopmoq, o'ramoq"],["꿈나라","uyqu (orzular yurti)"],["아침","ertalab"],["포근하다","mayin, iliq"],["따뜻하다","issiq, iliq"],["오늘","bugun"],["추억","xotira"],["한 장","bir varaq (surat)"],["아름답다","go'zal"],["모습","ko'rinish, qiyofa"],["그대로","o'sha holicha"],["남기다","qoldirmoq"],["학교","maktab"],["앞","old"],["천천히","sekin"],["한 번 더","yana bir bor"],["살피다","diqqat bilan qaramoq"],["식사","ovqatlanish"],["원하다","xohlamoq"],["날짜","sana"],["시간","vaqt"],["인원수","kishilar soni"],["선택하다","tanlamoq"],["연락 받다","aloqa uchun xabar olmoq"],["분","kishi (hurmat)"],["성함","ism (hurmat)"],["연락처","aloqa ma'lumoti"],["입력하다","kiritmoq"]]},
-{id:"102",title:"102-TOPIK",sub:"5~8-savollar so'zlari",words:[["걷다","yurmoq"],["때","payt, vaqt"],["발","oyoq"],["가볍다","yengil"],["디자인","dizayn"],["예쁘다","chiroyli"],["더러워지다","kirlanmoq"],["옷","kiyim"],["새","yangi"],["두껍다","qalin"],["이불","ko'rpa"],["맡기다","topshirmoq (xizmatga)"],["달리기","yugurish"],["지금","hozir"],["바로","darhol"],["시작하다","boshlamoq"],["활기차다","jonli, tetik"],["내일","ertaga"],["기다리다","kutmoq"],["공연","konsert, tomosha"],["인원","kishilar soni"],["다음","keyingi"],["버튼","tugma"],["누르다","bosmoq"],["좌석","o'rindiq"],["결제하다","to'lovni amalga oshirmoq"]]}
-]},
-{id:"listen912",label:"9~12 · Tinglash (듣기)",sets:[
+{id:"listen912",type:"listen",label:"9~12 · Keyingi harakat",sets:[
 {id:"83",title:"83-TOPIK",sub:"9~12-savollar so'zlari",words:[["사과","olma"],["씻다","yuvmoq"],["이제","endi"],["자르다","kesmoq"],["냄비","kastryulka"],["좀","ozgina"],["주다","bermoq"],["근데","lekin"],["잼","jem, murabbo"],["만들다","qilmoq, yasamoq"],["설탕","shakar"],["필요하다","kerak bo'lmoq"],["찾아오다","topib kelmoq"],["갖다 주다","olib kelib bermoq"],["과일","meva"],["가져오다","olib kelmoq"],["손님","mijoz, mehmon"],["놀이 기구","attraksion"],["타다","minmoq"],["그러면","unda, u holda"],["가방","sumka"],["보관하다","saqlab qo'ymoq"],["모자","bosh kiyim, shapka"],["쓰다","kiymoq (bosh kiyim)"],["날아가다","uchib ketmoq"],["같이","birga"],["벗다","yechmoq"],["떨어지다","tushmoq"],["물건","narsa, buyum"],["줍다","yerdan olmoq, termoq"],["받다","olmoq"],["빨래방","kir yuvish joyi"],["처음","birinchi marta"],["먼저","avval"],["코스","rejim, kurs"],["선택하다","tanlamoq"],["세탁물","kir, yuviladigan narsa"],["넣다","solmoq"],["안내문","ko'rsatma, e'lon"],["동전","tanga"],["동전 교환기","tanga almashtirgich"],["바꾸다","almashtirmoq"],["읽다","o'qimoq"],["감독님","rejissyor"],["촬영","suratga olish"],["준비","tayyorgarlik"],["끝나다","tugamoq"],["제자리","o'z joyi"],["놓다","qo'ymoq"],["카메라","kamera"],["화면","ekran"],["보이다","ko'rinmoq"],["확인하다","tekshirmoq"],["거울","oyna"],["사무실","ofis"],["치우다","yig'ishtirmoq, olib qo'ymoq"],["설치하다","o'rnatmoq"]]},
 {id:"91",title:"91-TOPIK",sub:"9~12-savollar so'zlari",words:[["기차","poyezd"],["시간","vaqt"],["남다","qolmoq"],["카페","kafe"],["커피","kofe"],["한잔","bir piyola"],["마시다","ichmoq"],["먹다","yemoq"],["김밥","kimbap"],["사다","sotib olmoq"],["들어가다","kirmoq"],["앉다","o'tirmoq"],["자리","joy, o'rindiq"],["자동차","avtomobil"],["수리하다","ta'mirlamoq"],["예약하다","bron qilmoq"],["열쇠","kalit"],["고객","mijoz"],["대기실","kutish xonasi"],["잠깐","bir oz"],["기다리다","kutmoq"],["안","ichi"],["두다","qo'ymoq"],["이쪽","bu tomon"],["상태","holat"],["말씀드리다","aytmoq (hurmat)"],["미술","tasviriy san'at"],["연필","qalam"],["고르다","tanlamoq"],["물감","bo'yoq"],["찾다","izlamoq"],["제품","mahsulot"],["이름","nom"],["알려 주다","aytib bermoq"],["직원","xodim"],["물어보다","so'ramoq"],["무대","sahna"],["점검","tekshirish"],["연습","mashq"],["진행하다","o'tkazmoq"],["공연팀","konsert guruhi"],["데리고 오다","olib kelmoq (odam)"],["순서","tartib"],["설명하다","tushuntirmoq"],["촬영팀","suratga olish guruhi"],["시작하다","boshlamoq"],["연락하다","aloqaga chiqmoq"],["얼른","tezda"],["다녀오다","borib kelmoq"],["공연","konsert"]]},
 {id:"96",title:"96-TOPIK",sub:"9~12-savollar so'zlari",words:[["여보세요","allo"],["내일","ertaga"],["여행","sayohat"],["빌려주다","qarzga bermoq"],["수업","dars"],["곧","tez orada"],["나가다","chiqmoq"],["지금","hozir"],["오다","kelmoq"],["바로","darhol"],["가지다","olmoq"],["고맙다","rahmat aytmoq"],["꺼내다","chiqarmoq"],["듣다","eshitmoq"],["저기요","kechirasiz (murojaat)"],["아버지","ota"],["로션","losion"],["선물하다","sovg'a qilmoq"],["어떤","qanday"],["요즘","hozirgi kunda"],["많이","ko'p"],["팔리다","sotilmoq"],["한번","bir marta"],["바르다","surtmoq"],["향기","hid, xushbo'ylik"],["부드럽다","yumshoq"],["포장하다","qadoqlamoq"],["계산","hisob, to'lov"],["선물","sovg'a"],["드리다","bermoq (hurmat)"],["한국어","koreys tili"],["토론","bahs, munozara"],["대회","musobaqa"],["한 명","bir kishi"],["누가","kim"],["잘하다","yaxshi qilmoq"],["일정","jadval"],["확실히","aniq, ishonchli"],["알아보다","surishtirmoq"],["일정표","jadval varaqasi"],["출력하다","chop etmoq"],["부장님","bo'lim boshlig'i"],["신제품","yangi mahsulot"],["소비자","iste'molchi"],["설문","so'rovnoma"],["결과","natija"],["부탁드리다","iltimos qilmoq (hurmat)"],["크기","o'lcham"],["줄이다","kichraytirmoq"],["반응","reaksiya, munosabat"],["디자인","dizayn"],["다양화하다","xilma-xil qilmoq"],["보고서","hisobot"],["작성하다","tuzmoq, yozmoq"],["금요일","juma"],["회의","yig'ilish"],["참석하다","qatnashmoq"],["제출하다","topshirmoq"]]},
 {id:"102",title:"102-TOPIK",sub:"9~12-savollar so'zlari",words:[["놀이기구","attraksion"],["쉬다","dam olmoq"],["다리","oyoq"],["아프다","og'rimoq"],["시원하다","salqin"],["음료수","ichimlik"],["물","suv"],["한 병","bir shisha"],["부탁하다","iltimos qilmoq"],["의자","stul"],["티셔츠","futbolka"],["교환하다","almashtirmoq"],["입다","kiymoq"],["작다","kichik"],["영수증","chek"],["사이즈","o'lcham"],["크다","katta"],["갖다드리다","olib kelib bermoq (hurmat)"],["다른","boshqa"],["금방","darhol, tez orada"],["창고","ombor"],["구경하다","tomosha qilmoq"],["발표","taqdimot"],["자료","material"],["복사하다","nusxa olmoq"],["벌써","allaqachon"],["복사기","nusxa ko'chirish apparati"],["고장 나다","buzilmoq"],["종이","qog'oz"],["켜다","yoqmoq"],["대리","o'rinbosar (lavozim)"],["신입 사원","yangi xodim"],["워크숍","seminar, treyning"],["장소","joy"],["예약","bron"],["완료하다","tugatmoq"],["사회","boshlovchilik"],["특강","maxsus ma'ruza"],["아직","hali"],["강사","o'qituvchi, ma'ruzachi"],["이분","bu kishi (hurmat)"],["명함","vizitka"],["가능하다","mumkin"],["연락처","aloqa ma'lumoti"],["만나다","uchrashmoq"]]}
 ]},
-{id:"listen1316",label:"13~16 · Tinglash (듣기)",sets:[
+{id:"listen1316",type:"listen",label:"13~16 · Eshitgan mazmun",sets:[
 {id:"83",title:"83-TOPIK",sub:"13~16-savollar so'zlari",words:[["사진","surat"],["모형","model, maket"],["실제","haqiqiy, real"],["배","kema"],["똑같다","bir xil, aynan o'xshash"],["뭐로","nimadan"],["나무","yog'och"],["가죽","teri (charm)"],["신기하다","ajoyib, hayratlanarli"],["이용하다","foydalanmoq"],["직접","o'zi, bevosita"],["만들어지다","yasalmoq"],["댄스","raqs"],["대회","musobaqa"],["여러분","hurmatli hozir bo'lganlar"],["안내 드리다","ma'lumot bermoq"],["개회식","ochilish marosimi"],["열리다","o'tkazilmoq, ochilmoq"],["참가자","ishtirokchi"],["대회장","musobaqa maydoni"],["예선","saralash (bosqichi)"],["경기","o'yin, musobaqa"],["시작되다","boshlanmoq"],["협조","hamkorlik"],["부탁드리다","iltimos qilmoq"],["장면","manzara, sahna"],["찍다","suratga olmoq"],["어젯밤","kecha kechasi"],["산","tog'"],["길을 잃다","adashib qolmoq"],["등산객","tog'ga chiquvchi"],["구조되다","qutqarilmoq"],["구조 요청","yordam so'rovi"],["구조대원","qutqaruvchi"],["곧바로","darhol"],["수색 작업","qidiruv ishlari"],["발견하다","topmoq"],["정상","cho'qqi"],["내려오다","pastga tushmoq"],["확인되다","aniqlanmoq"],["사고","hodisa, falokat"],["발생하다","yuz bermoq"],["원인","sabab"],["조사하다","tekshirmoq"],["오르다","chiqmoq, ko'tarilmoq"],["작가","ijodkor, rassom"],["그림","rasm"],["인기를 얻다","mashhur bo'lmoq"],["흔하다","oddiy, ko'p uchraydigan"],["평범하다","oddiy"],["소재","mavzu, material"],["그리다","chizmoq"],["어린 시절","bolalik davri"],["기억하다","eslamoq"],["배우다","o'rganmoq"],["꾸미다","bezamoq"],["느낌","his, tuyg'u"],["전문적","professional"],["화려하다","hashamatli"],["화가","rassom"],["삼다","qilib olmoq"]]},
 {id:"91",title:"91-TOPIK",sub:"13~16-savollar so'zlari",words:[["만에","(vaqt) o'tib"],["변하다","o'zgarmoq"],["곳","joy"],["넓어지다","kengaymoq"],["가게","do'kon"],["많아지다","ko'paymoq"],["서점","kitob do'koni"],["아직도","hali ham"],["그대로","o'sha holicha"],["대학","universitet"],["전공","mutaxassislik"],["책","kitob"],["자주","tez-tez"],["예전","o'tmish, avval"],["좁아지다","torayib qolmoq"],["안내 말씀드리다","e'lon qilmoq"],["고객 센터","mijozlar markazi"],["빨간색","qizil rang"],["지갑","hamyon"],["층","qavat"],["구두","tufli"],["매장","savdo maydoni"],["발견되다","topilmoq"],["백화점","univermag"],["문을 닫다","yopilmoq"],["분실하다","yo'qotmoq"],["분실물","yo'qolgan buyum"],["오후","tushdan keyin"],["잃어버리다","yo'qotmoq"],["새벽","tong, saharlab"],["앞바다","sohil oldi dengizi"],["낚싯배","baliq ovi qayig'i"],["바위","qoya, katta tosh"],["부딪치다","urilmoq"],["경찰","politsiya"],["다행히","baxtga ko'ra"],["다치다","jarohatlanmoq"],["현재","hozir"],["충돌하다","to'qnashmoq"],["동물보건사","veterinariya hamshirasi"],["직업","kasb"],["동물","hayvon"],["병원","kasalxona"],["돌보다","parvarish qilmoq"],["살피다","kuzatmoq"],["수의사","veterinar"],["처방","retsept, tayinlash"],["약","dori"],["진찰","ko'rik"],["수술하다","operatsiya qilmoq"],["돕다","yordam bermoq"],["보호자","egasi, vasiy"],["주의하다","ehtiyot bo'lmoq"],["사항","jihat, band"],["참여하다","qatnashmoq"],["관찰하다","kuzatmoq"],["업무","vazifa, ish"]]},
 {id:"96",title:"96-TOPIK",sub:"13~16-savollar so'zlari",words:[["비가 오다","yomg'ir yog'moq"],["캠핑","chodirda dam olish"],["취소하다","bekor qilmoq"],["저번","o'tgan safar"],["분위기","muhit, kayfiyat"],["텐트","chodir"],["빗소리","yomg'ir tovushi"],["얼마나","qanchalik"],["분명","albatta, aniq"],["혼자","yolg'iz"],["날씨","ob-havo"],["저희","biz (kamtarona)"],["마트","do'kon (market)"],["개업","ochilish (do'kon)"],["주년","yillik"],["맞이하다","nishonlamoq"],["일주일","bir hafta"],["동안","davomida"],["식품","oziq-ovqat"],["코너","bo'lim"],["특별","maxsus"],["할인","chegirma"],["행사","tadbir"],["진행하다","o'tkazmoq"],["이상","dan ortiq"],["구매하다","sotib olmoq"],["선물","sovg'a"],["기간","muddat"],["영업시간","ish vaqti"],["연장하다","uzaytirmoq"],["관심","qiziqish"],["올해","bu yil"],["늘어나다","ko'paymoq"],["제외되다","chetlatilmoq"],["방문하다","tashrif buyurmoq"],["시청","shahar hokimligi"],["개최하다","o'tkazmoq"],["자전거","velosiped"],["시민","fuqaro"],["참가하다","qatnashmoq"],["성공적","muvaffaqiyatli"],["마무리되다","yakunlanmoq"],["체력","jismoniy kuch"],["향상","yaxshilanish, o'sish"],["정해지다","belgilanmoq"],["들어오다","kirib kelmoq"],["순위","o'rin, reyting"],["메달","medal"],["경쟁","raqobat"],["즐기다","zavqlanmoq"],["긍정적","ijobiy"],["평가","baho"],["저조하다","past, sust"],["화재","yong'in"],["현장","voqea joyi"],["구체적","aniq, batafsil"],["최초","birinchi, dastlabki"],["신고자","xabar bergan shaxs"],["상황","vaziyat"],["시작점","boshlanish nuqtasi"],["흔적","iz"],["분석하다","tahlil qilmoq"],["밝히다","aniqlab bermoq"],["피해","zarar"],["금액","pul miqdori"],["계산하다","hisoblamoq"]]},
 {id:"102",title:"102-TOPIK",sub:"13~16-savollar so'zlari",words:[["동아리","to'garak, klub"],["주문하다","buyurtma bermoq"],["택배","pochta, yetkazma"],["문자","SMS"],["관리실","nazoratchi xonasi"],["바뀌다","o'zgarmoq"],["시키다","buyurtma qilmoq"],["도착","yetib kelish"],["야구장","beysbol maydoni"],["관중","tomoshabinlar"],["갑자기","to'satdan"],["내리다","yog'moq, tushmoq"],["더 이상","endi, boshqa"],["진행","davom ettirish"],["예정","reja"],["구입하다","sotib olmoq"],["입장권","kirish chiptasi"],["사용하다","ishlatmoq"],["환불 받다","pulini qaytarib olmoq"],["관련","aloqador"],["문의","so'rov, murojaat"],["홈페이지","veb-sayt"],["정문","asosiy darvoza"],["안내소","ma'lumot xonasi"],["온라인","onlayn"],["불가능하다","imkonsiz"],["오전","tushdan oldin"],["그치다","to'xtamoq (yomg'ir)"],["정부","hukumat"],["지구","Yer (sayyora)"],["온도","harorat"],["운동","harakat, kampaniya"],["기후","iqlim"],["출시하다","bozorga chiqarmoq"],["실물","haqiqiy jism"],["대신","o'rniga"],["모바일","mobil"],["발급되다","chiqarilmoq"],["대중교통","jamoat transporti"],["공공","jamoat, umumiy"],["요금","narx, to'lov"],["판매","sotuv"],["수익금","foyda puli"],["일부","bir qismi"],["단체","tashkilot"],["기부되다","xayriya qilinmoq"],["지난달","o'tgan oy"],["전달되다","yetkazilmoq"],["포함되다","o'z ichiga olmoq"],["가전제품","maishiy texnika"],["작동음","ishlash tovushi"],["경고음","ogohlantirish signali"],["소리","tovush, ovoz"],["에어컨","konditsioner"],["세탁","kir yuvish"],["개발하다","ishlab chiqmoq"],["클래식 음악","klassik musiqa"],["활용하다","foydalanmoq"],["초기 단계","dastlabki bosqich"],["개발팀","ishlab chiqish guruhi"],["전문 지식","mutaxassislik bilimi"],["전공하다","mutaxassislik bo'yicha o'qimoq"],["도움이 되다","foyda bermoq"],["작업","ish, mehnat"],["완성","tugallanish"],["부족하다","yetishmaydi"]]}
+]},
+{id:"read58",type:"read",label:"5~8 · Reklama va e'lon",sets:[
+{id:"83",title:"83-TOPIK",sub:"5~8-savollar so'zlari",words:[["가볍다","yengil"],["신다","kiymoq (oyoq kiyim)"],["어떤","qanday, har qanday"],["길","yo'l"],["편하다","qulay"],["세상","dunyo"],["경험하다","boshdan kechirmoq, sinab ko'rmoq"],["매일","har kuni"],["정성","mehr, g'ayrat"],["담다","solmoq, jo qilmoq"],["더","yana, ko'proq"],["맛있다","mazali"],["자연","tabiat"],["얻다","olmoq"],["신선하다","yangi, taza"],["재료","masalliq, xomashyo"],["사용하다","ishlatmoq"],["웃다","kulmoq"],["얼굴","yuz"],["밝다","yorug', ochiq"],["인사","salom, salomlashish"],["모두","hamma"],["기분","kayfiyat"],["좋다","yaxshi"],["하루","bir kun"],["시작","boshlanish"],["승강장","perron (platforma)"],["뛰다","yugurmoq, sakramoq"],["출입문","kirish-chiqish eshigi"],["닫히다","yopilmoq"],["무리하게","zo'rma-zo'raki, majburan"],["타다","minmoq"]]},
+{id:"91",title:"91-TOPIK",sub:"5~8-savollar so'zlari",words:[["입속","og'iz ichi"],["치아","tish"],["사이사이","orasidagi bo'shliqlar"],["깨끗이","toza, tozalab"],["부드럽다","yumshoq"],["잘","yaxshi"],["닦다","tozalamoq, artmoq"],["아이들","bolalar"],["예쁘다","chiroyli, go'zal"],["꿈","orzu"],["희망","umid"],["키우다","o'stirmoq, tarbiyalamoq"],["곳","joy"],["부모","ota-ona"],["마음","dil, ko'ngil"],["보살피다","g'amxo'rlik qilmoq"],["계단","zinapoya"],["다니다","qatnamoq, yurmoq"],["운동하다","sport bilan shug'ullanmoq"],["우리","biz(ning)"],["몸","tana"],["실천하다","amalga oshirmoq, amal qilmoq"],["공연장","konsert zali"],["사진 촬영","surat olish"],["금지하다","taqiqlamoq"],["휴대 전화","mobil telefon"],["전원","quvvat, tok"],["끄다","o'chirmoq"],["진동","tebranish (vibratsiya)"]]},
+{id:"96",title:"96-TOPIK",sub:"5~8-savollar so'zlari",words:[["덮다","yopmoq, o'ramoq"],["꿈나라","uyqu (orzular yurti)"],["아침","ertalab"],["포근하다","mayin, iliq"],["따뜻하다","issiq, iliq"],["오늘","bugun"],["추억","xotira"],["한 장","bir varaq (surat)"],["아름답다","go'zal"],["모습","ko'rinish, qiyofa"],["그대로","o'sha holicha"],["남기다","qoldirmoq"],["학교","maktab"],["앞","old"],["천천히","sekin"],["한 번 더","yana bir bor"],["살피다","diqqat bilan qaramoq"],["식사","ovqatlanish"],["원하다","xohlamoq"],["날짜","sana"],["시간","vaqt"],["인원수","kishilar soni"],["선택하다","tanlamoq"],["연락 받다","aloqa uchun xabar olmoq"],["분","kishi (hurmat)"],["성함","ism (hurmat)"],["연락처","aloqa ma'lumoti"],["입력하다","kiritmoq"]]},
+{id:"102",title:"102-TOPIK",sub:"5~8-savollar so'zlari",words:[["걷다","yurmoq"],["때","payt, vaqt"],["발","oyoq"],["가볍다","yengil"],["디자인","dizayn"],["예쁘다","chiroyli"],["더러워지다","kirlanmoq"],["옷","kiyim"],["새","yangi"],["두껍다","qalin"],["이불","ko'rpa"],["맡기다","topshirmoq (xizmatga)"],["달리기","yugurish"],["지금","hozir"],["바로","darhol"],["시작하다","boshlamoq"],["활기차다","jonli, tetik"],["내일","ertaga"],["기다리다","kutmoq"],["공연","konsert, tomosha"],["인원","kishilar soni"],["다음","keyingi"],["버튼","tugma"],["누르다","bosmoq"],["좌석","o'rindiq"],["결제하다","to'lovni amalga oshirmoq"]]}
+]},
+{id:"read912",type:"read",label:"9~12 · Matn va grafik",sets:[
+{id:"83",title:"83-TOPIK",sub:"9~12-savollar so'zlari",words:[["과거","o'tmish"],["모습","ko'rinish, qiyofa"],["찾다","izlamoq"],["기간","muddat"],["대상","obyekt, mo'ljal"],["이전","oldin, avval"],["찍다","suratga olmoq"],["방법","usul"],["시청","shahar hokimligi"],["홍보실","targ'ibot bo'limi"],["방문","tashrif"],["제출","topshirish"],["분","kishi (hurmat)"],["문화 상품권","madaniyat sovg'a taloni"],["드리다","bermoq (hurmat)"],["행사","tadbir"],["진행되다","o'tkazilmoq"],["이메일","elektron pochta"],["올해","bu yil"],["참여하다","qatnashmoq"],["옛날","qadimgi, eski"],["대학생","talaba"],["용돈","cho'ntak puli"],["쓰다","sarflamoq"],["문화생활비","madaniy hayot xarajati"],["기타","boshqalar"],["물건 구입비","buyum xarid xarajati"],["교통비","transport xarajati"],["식비","ovqat xarajati"],["학원비","kurs xarajati"],["조사 대상","so'rov obyekti"],["비율","nisbat, ulush"],["가장","eng"],["낮다","past"],["사용","foydalanish"],["두 배 이상","ikki barobardan ortiq"],["절반 이상","yarmidan ortiq"],["지출하다","sarflamoq"],["적다","kam"],["그림책","rasmli kitob"],["작가","muallif, ijodkor"],["최초","birinchi, ilk"],["어린이책","bolalar kitobi"],["상","mukofot"],["주목받다","e'tibor qozonmoq"],["만들어지다","yaratilmoq"],["발표하다","e'lon qilmoq"],["작품","asar"],["심사하다","hakamlik qilmoq, baholamoq"],["꿈꾸다","orzu qilmoq"],["상상하다","tasavvur qilmoq"],["세계","dunyo, olam"],["표현하다","ifodalamoq"],["평","baho, fikr"],["작년","o'tgan yil"],["처음","birinchi marta"],["경험하다","boshdan kechirmoq"],["골라","tanlab"],["제출하다","topshirmoq"],["오전","tushdan oldin"],["규모","kuch, miqyos"],["지진","zilzila"],["발생하다","yuz bermoq"],["이날","o'sha kuni"],["상황실","vaziyat nazorati xonasi"],["느끼다","sezmoq"],["시민","fuqaro"],["신고","xabar berish, ariza"],["접수되다","qabul qilinmoq"],["입다","(zarar) ko'rmoq"],["피해","zarar"],["조사되다","aniqlanmoq"],["기상청","gidrometeorologiya markazi"],["이번 주","bu hafta"],["정도","atrofida, taxminan"],["늦은 밤","kech tun"],["일어나다","yuz bermoq"]]},
+{id:"91",title:"91-TOPIK",sub:"9~12-savollar so'zlari",words:[["야경","tungi manzara"],["관광버스","sayohat avtobusi"],["운행","qatnov"],["안내","ma'lumot"],["즐기다","zavqlanmoq"],["관광 장소","sayohat joyi"],["광장","maydon"],["출발","jo'nab ketish"],["전망대","manzara maydonchasi"],["출발 시간","jo'nash vaqti"],["매일","har kuni"],["이용 요금","foydalanish narxi"],["성인","kattalar"],["학생","o'quvchi"],["이하","...dan kichik"],["무료","bepul"],["예약 방법","bron usuli"],["전날","bir kun oldin"],["홈페이지","veb-sayt"],["신청","ariza berish"],["요금","to'lov"],["오전","tushdan oldin"],["미리","oldindan"],["직장인","ishchi-xodim"],["출퇴근","ishga borib-kelish"],["이동 수단","harakat vositasi"],["자가용","shaxsiy avtomobil"],["버스","avtobus"],["지하철","metro"],["걸어서","piyoda"],["기타","boshqalar"],["응답하다","javob bermoq"],["비율","nisbat, ulush"],["줄다","kamaymoq"],["적다","kam"],["가장","eng"],["많다","ko'p"],["제일","eng"],["이용하다","foydalanmoq"],["작년","o'tgan yil"],["이어","ketidan, davomida"],["한 달간","bir oy davomida"],["찾아가다","borib xizmat ko'rsatmoq"],["자전거","velosiped"],["수리","ta'mir"],["센터","markaz"],["운영하다","boshqarmoq, olib bormoq"],["평일","ish kuni"],["여러","bir necha"],["지역","hudud"],["직접","bevosita"],["방문하다","tashrif buyurmoq"],["고치다","tuzatmoq"],["주말","dam olish kuni"],["제공하다","taqdim etmoq"],["전문","mutaxassis"],["기사","usta, xizmatchi"],["부품","ehtiyot qism"],["교체","almashtirish"],["필요하다","kerak bo'lmoq"],["저렴하다","arzon"],["가격","narx"],["바꾸다","almashtirmoq"],["생활화","odatga aylantirish"],["밝히다","bayon qilmoq, aytmoq"],["일 년 내내","yil bo'yi"],["피자","pitsa"],["가게","do'kon"],["사연","voqea, hikoya"],["잔잔하다","mayin, muloyim"],["감동","ta'sirlanish"],["최근","yaqinda"],["배달하다","yetkazib bermoq"],["오토바이","mototsikl"],["빗길","yomg'irli yo'l"],["미끄러지다","sirg'anib ketmoq"],["사고를 당하다","falokatga uchramoq"],["다행히","baxtga ko'ra"],["다치다","jarohatlanmoq"],["피해","zarar"],["망가지다","buzilmoq, sinmoq"],["늦어지다","kechikmoq"],["고객","mijoz"],["연락하다","bog'lanmoq"],["따뜻하다","iliq"],["전하다","yetkazmoq"],["취소하다","bekor qilmoq"]]},
+{id:"96",title:"96-TOPIK",sub:"9~12-savollar so'zlari",words:[["영상","video"],["노래","qo'shiq"],["대회","musobaqa"],["제출 방법","topshirish usuli"],["신청서","ariza varaqasi"],["전송","jo'natish"],["게시판","e'lonlar taxtasi"],["다운로드","yuklab olish"],["가능","mumkin"],["제출 기간","topshirish muddati"],["결과 발표","natijalar e'loni"],["게시","e'lon qilish, joylash"],["알려 주다","bildirmoq"],["내다","topshirmoq"],["내려받다","yuklab olmoq"],["직접","o'zi, bevosita"],["택배","pochta yetkazma"],["배송되다","yetkazilmoq"],["물건","buyum"],["기타","boshqalar"],["운동 용품","sport buyumlari"],["전자 제품","elektron mahsulot"],["화장품","kosmetika"],["식품","oziq-ovqat"],["의류","kiyim-kechak"],["조사 대상","so'rov obyekti"],["가장","eng"],["비율","nisbat, ulush"],["낮다","past"],["넘다","oshmoq"],["두 번째","ikkinchi"],["높다","yuqori"],["로봇","robot"],["연구소","ilmiy-tadqiqot markazi"],["겨울 방학","qishki ta'til"],["맞다","kutib olmoq"],["초등학생","boshlang'ich sinf o'quvchisi"],["교육 프로그램","ta'lim dasturi"],["운영하다","olib bormoq"],["참여하다","qatnashmoq"],["조종하다","boshqarmoq"],["체험","sinab ko'rish, tajriba"],["과학자","olim"],["희망하다","orzu qilmoq"],["특히","ayniqsa"],["반응","munosabat, qiziqish"],["내년","kelasi yil"],["진행하다","o'tkazmoq"],["예정","reja"],["학기 중","o'quv yili davomida"],["꿈꾸다","orzu qilmoq"],["인기","mashhurlik"],["지난","o'tgan"],["차량","transport vositasi"],["산길","tog' yo'li"],["미끄러지다","sirg'anib ketmoq"],["운전하다","haydamoq"],["의식을 잃다","hushidan ketmoq"],["함께","birga"],["개","it"],["빠져나오다","chiqib ketmoq"],["근처","yaqin atrof"],["마을","qishloq"],["달려가다","yugurib bormoq"],["주인","ega"],["계속","davomli"],["짖다","hurmoq (it)"],["이상하게 여기다","g'alati deb bilmoq"],["따라가다","ergashib bormoq"],["발견하다","topmoq"],["옮기다","ko'chirmoq"],["치료","davolash"],["보내다","jo'natmoq"],["등산","tog'ga chiqish"],["키우다","boqmoq, o'stirmoq"]]},
+{id:"102",title:"102-TOPIK",sub:"9~12-savollar so'zlari",words:[["그림책","rasmli kitob"],["읽어 주다","o'qib bermoq"],["자원봉사자","ko'ngilli"],["모집","jalb qilish, to'plash"],["어린이","bola"],["꿈","orzu"],["희망","umid"],["선물하다","sovg'a qilmoq"],["자격","malaka, huquq"],["고등학생","o'rta maktab o'quvchisi"],["대학생","talaba"],["외국인","chet ellik"],["모집 기간","to'plash muddati"],["신청 방법","ariza usuli"],["도서관","kutubxona"],["활동 기간","faoliyat muddati"],["봉사 활동","ko'ngillilik faoliyati"],["직접","o'zi, bevosita"],["참여하다","qatnashmoq"],["여행사","sayyohlik agentligi"],["선택하다","tanlamoq"],["중요하다","muhim"],["이용 후기","foydalanuvchi sharhi"],["기타","boshqalar"],["회사","kompaniya"],["규모","hajm, miqyos"],["여행 상품","sayohat paketi"],["다양성","xilma-xillik"],["가격","narx"],["설문 대상","so'rov obyekti"],["응답하다","javob bermoq"],["비율","nisbat, ulush"],["가장","eng"],["낮다","past"],["반을 넘다","yarmidan oshmoq"],["두 배 이상","ikki barobardan ortiq"],["적다","kam"],["지난달","o'tgan oy"],["문을 열다","ochilmoq"],["우표","pochta markasi"],["박물관","muzey"],["사랑을 받다","sevib qolinmoq"],["역사실","tarix zali"],["역사","tarix"],["한눈에","bir qarashda"],["어린이 체험실","bolalar tajriba xonasi"],["향기","hid, xushbo'ylik"],["맡다","hidlamoq"],["만지다","ushlab ko'rmoq"],["들어가다","kirmoq"],["편지","xat"],["넣다","solmoq"],["뒤","keyin"],["느리다","sekin"],["우체통","pochta qutisi"],["인기를 끌다","mashhur bo'lmoq"],["운영","boshqaruv"],["보내다","jo'natmoq"],["휴일","dam olish kuni"],["오르다","chiqmoq"],["경찰","politsiya"],["등산객","tog'ga chiquvchi"],["구조하다","qutqarmoq"],["경위","leytenant (politsiya unvoni)"],["정상","cho'qqi"],["여성","ayol"],["쓰러지다","yiqilmoq, hushsiz yotmoq"],["발견하다","topmoq"],["바로","darhol"],["체온","tana harorati"],["떨어지다","pasaymoq"],["겉옷","ustki kiyim"],["벗다","yechmoq"],["덮다","yopmoq, o'ramoq"],["신고하다","xabar bermoq"],["이후","keyin"],["구조대","qutqaruv guruhi"],["중턱","tog' yonbag'ri"],["대피소","boshpana"],["업다","ko'tarmoq (yelkaga)"],["뛰어 내려가다","yugurib tushmoq"],["이송되다","olib ketilmoq (bemor)"],["치료","davolash"],["되찾다","qaytadan tiklamoq"],["이동하다","harakatlanmoq"]]}
 ]}
 ];
+
 </script>
 <script>
 /* ============ bo'limlar (43~44 va 46~47) ============ */
 // SECTIONS data2.js dan keladi. Har set'ga secId qo'shamiz, global SETS = hamma set.
 SECTIONS.forEach(sec=>sec.sets.forEach(s=>{ s.secId=sec.id; s.uid=sec.id+'-'+s.id; }));
 const ALLSETS = SECTIONS.flatMap(s=>s.sets);
-let SEC = SECTIONS[0].id;                 // joriy bo'lim
+const TYPES = [
+  {id:'listen', label:'듣기', uz:'Tinglash'},
+  {id:'read',   label:'읽기', uz:"O'qish"},
+];
+let TYPE = null;                          // joriy tur (listen/read)
+let SEC  = null;                          // joriy bo'lim
+function typeSections(t){ return SECTIONS.filter(s=>s.type===t); }
+function typeLabel(t){ const x=TYPES.find(y=>y.id===t); return x.label+' · '+x.uz; }
 function curSets(){ return SECTIONS.find(x=>x.id===SEC).sets; }
 function secLabel(id){ return SECTIONS.find(x=>x.id===id).label; }
+function secType(id){ return SECTIONS.find(x=>x.id===id).type; }
+function setsOfType(t){ return typeSections(t).flatMap(s=>s.sets); }
 
 /* ============ server (umumiy reyting) ============ */
 const API='https://gogeup-soz-reyting.online-koreys-tili.workers.dev';
 const GAME='topik-junggeup-v1';   // so'zlar almashgani uchun reyting noldan
-let TOP=null, TOP_ERR=false;
+const TOPS={}, TOPERR={};              // reyting keshi: game nomi -> qatorlar
 
-async function pushScore(){
-  const s=userScore(DB.current);
+// reyting nomlari: umumiy / tur / bo'lim
+function gTotal(){ return GAME; }
+function gType(t){ return GAME+'-'+t; }
+function gSec(id){ return GAME+'-s-'+id; }
+
+async function post(game, ok, done){
   try{
     await fetch(API+'/score',{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({game:GAME,name:DB.current,ok:s.ok,done:s.done})});
+      body:JSON.stringify({game,name:DB.current,ok,done})});
   }catch(e){ /* internet yo'q — natija telefonda saqlanib turaveradi */ }
 }
-async function fetchTop(){
+async function pushScore(){
+  const t=userScore(DB.current);
+  const jobs=[ post(gTotal(), t.ok, t.done) ];
+  TYPES.forEach(x=>{ const s=userScore(DB.current,{type:x.id}); jobs.push(post(gType(x.id), s.ok, s.done)); });
+  SECTIONS.forEach(sec=>{ const s=userScore(DB.current,{sec:sec.id}); jobs.push(post(gSec(sec.id), s.ok, s.done)); });
+  await Promise.all(jobs);
+}
+async function fetchTop(game){
   try{
-    const r=await fetch(API+'/top?game='+GAME);
-    const d=await r.json(); TOP=d.rows||[]; TOP_ERR=false;
-  }catch(e){ TOP=null; TOP_ERR=true; }
+    const r=await fetch(API+'/top?game='+game);
+    const d=await r.json(); TOPS[game]=d.rows||[]; TOPERR[game]=false;
+  }catch(e){ TOPS[game]=null; TOPERR[game]=true; }
 }
 
 /* ============ saqlash ============ */
@@ -224,13 +251,19 @@ function wrongOf(s){
   return out;
 }
 function secWrong(){ return curSets().flatMap(s=>wrongOf(s)); }
-function userScore(name){
-  const u=DB.users[name]; if(!u) return {ok:0,done:0};
-  let ok=0,done=0;
-  ALLSETS.forEach(s=>{ const a=u.stats[s.uid]; if(!a||Array.isArray(a)) return;
+function userScore(name, filt){
+  const u=DB.users[name]; if(!u) return {ok:0,done:0,all:0};
+  let list=ALLSETS;
+  if(filt && filt.type) list=setsOfType(filt.type);
+  if(filt && filt.sec)  list=SECTIONS.find(x=>x.id===filt.sec).sets;
+  let ok=0,done=0,all=0;
+  list.forEach(s=>{ all+=s.words.length; const a=u.stats[s.uid]; if(!a||Array.isArray(a)) return;
     s.words.forEach(w=>{ const v=a[w[0]]; if(v!==undefined&&v!==null){done++; if(v===true) ok++;} }); });
-  return {ok,done};
+  return {ok,done,all};
 }
+// tur bo'yicha statistika
+function typeStat(t){ let ok=0,no=0,done=0,all=0; setsOfType(t).forEach(s=>{const x=setStat(s);ok+=x.ok;no+=x.no;done+=x.done;all+=x.all;}); return {ok,no,done,all}; }
+function typeWrong(t){ return setsOfType(t).flatMap(s=>wrongOf(s)); }
 
 /* ============ ism ============ */
 function screenName(){
@@ -253,35 +286,38 @@ function screenName(){
   const nm=document.getElementById('nm'); nm.focus();
   const go=()=>{
     const v=nm.value.trim(); if(!v) {nm.focus(); return;}
-    DB.current=v; if(!DB.users[v]) DB.users[v]=blankUser(); save(); screenSections();
+    DB.current=v; if(!DB.users[v]) DB.users[v]=blankUser(); save(); screenTypes();
   };
   document.getElementById('go').onclick=go;
   nm.addEventListener('keydown',e=>{if(e.key==='Enter')go();});
-  app.querySelectorAll('[data-n]').forEach(b=>b.onclick=()=>{DB.current=b.dataset.n;save();screenSections();});
+  app.querySelectorAll('[data-n]').forEach(b=>b.onclick=()=>{DB.current=b.dataset.n;save();screenTypes();});
 }
-function whoBar(showSecLink){
+function whoBar(level){   // level: 0=tur tanlash, 1=bo'limlar, 2=variantlar/ichkari
   whoEl.innerHTML=`<span>O'quvchi: <b>${DB.current}</b></span>
-    ${showSecLink?`<button class="link" id="tosec">bo'limlar</button>`:''}
+    ${level>=1?`<button class="link" id="navtype">듣기 / 읽기</button>`:''}
+    ${level>=2?`<button class="link" id="navsec">${typeLabel(TYPE).split(' · ')[0]} bo'limlari</button>`:''}
     <button class="link" id="chg">ismni almashtirish</button>`;
   document.getElementById('chg').onclick=()=>{DB.current=null;save();screenName();};
-  const ts=document.getElementById('tosec'); if(ts) ts.onclick=screenSections;
+  const tt=document.getElementById('navtype'); if(tt) tt.onclick=screenTypes;
+  const ts=document.getElementById('navsec'); if(ts) ts.onclick=screenSections;
 }
 
-/* ============ bo'lim tanlash (43~44 / 46~47) ============ */
-function screenSections(){
-  whoBar(false);
-  if(TOP===null && !TOP_ERR) fetchTop().then(()=>{ if(document.getElementById('reload')) screenSections(); });
+/* ============ 1-ekran: 듣기 / 읽기 ============ */
+function screenTypes(){
+  whoBar(0);
   const t=totalStat();
   app.innerHTML=`
     ${SAVE_OK?'':'<div class="warn">Diqqat: bu brauzerda natija saqlanmayapti.</div>'}
     <div class="card">
-      <h2>Qaysi qismni mashq qilamiz?</h2>
+      <h2>Qaysi qismdan boshlaymiz?</h2>
       <div class="sets" style="margin-top:12px">
-        ${SECTIONS.map(sec=>{
-          const prevSec=SEC; SEC=sec.id; const st=secStat(); SEC=prevSec;
-          return `<button class="set" data-s="${sec.id}">
-            <div class="n">${sec.label}</div>
-            <div class="m">${sec.sets.reduce((a,b)=>a+b.words.length,0)} ta so'z · ${sec.sets.length} ta variant</div>
+        ${TYPES.map(x=>{
+          const st=typeStat(x.id);
+          const n=setsOfType(x.id).reduce((a,b)=>a+b.words.length,0);
+          return `<button class="set" data-t="${x.id}">
+            <div class="n" style="font-size:30px">${x.label}</div>
+            <div class="m" style="font-size:15px;color:var(--ink)">${x.uz}</div>
+            <div class="m">${n} ta so'z · ${typeSections(x.id).length} ta bo'lim</div>
             <div class="m" style="color:${st.done?'var(--ink)':'var(--muted)'}">${st.done? st.ok+'/'+st.all+" to'g'ri":'boshlanmagan'}</div>
           </button>`;}).join('')}
       </div>
@@ -291,15 +327,49 @@ function screenSections(){
       <div class="score">${t.ok} / ${t.all}</div>
       <p class="hint">${t.no} ta xato · ${t.all-t.ok-t.no} ta so'z hali ishlanmagan</p>
     </div>
-    ${rankCard()}`;
+    ${rankCard(gTotal(),'Umumiy reyting',t.all)}`;
+  app.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{ TYPE=b.dataset.t; screenSections(); });
+  wireRank(gTotal(), screenTypes);
+}
+
+/* ============ bo'lim tanlash (43~44 / 46~47) ============ */
+function screenSections(){
+  whoBar(1);
+  const t=typeStat(TYPE), tw=typeWrong(TYPE);
+  const secs=typeSections(TYPE);
+  app.innerHTML=`
+    <div class="card" style="padding:16px 20px"><b>${typeLabel(TYPE)}</b></div>
+    <div class="card">
+      <h2>Qaysi bo'limni mashq qilamiz?</h2>
+      <div class="sets" style="margin-top:12px">
+        ${secs.map(sec=>{
+          const prevSec=SEC; SEC=sec.id; const st=secStat(); SEC=prevSec;
+          return `<button class="set" data-s="${sec.id}">
+            <div class="n" style="font-size:19px">${sec.label}</div>
+            <div class="m">${sec.sets.reduce((a,b)=>a+b.words.length,0)} ta so'z · ${sec.sets.length} ta variant</div>
+            <div class="m" style="color:${st.done?'var(--ink)':'var(--muted)'}">${st.done? st.ok+'/'+st.all+" to'g'ri":'boshlanmagan'}</div>
+          </button>`;}).join('')}
+      </div>
+    </div>
+    <div class="card">
+      <h2>${typeLabel(TYPE)} — statistika</h2>
+      <div class="score">${t.ok} / ${t.all}</div>
+      <p class="hint">${t.no} ta xato · ${t.all-t.ok-t.no} ta so'z hali ishlanmagan</p>
+      ${tw.length?`<button class="btn" id="rev">Xato so'zlarni takrorlash (${tw.length} ta)</button>`:''}
+    </div>
+    ${rankCard(gType(TYPE), typeLabel(TYPE)+' — reyting', t.all)}
+    <div class="card">
+      <div class="row"><button class="btn ghost" id="back">듣기 / 읽기 tanlashga qaytish</button></div>
+    </div>`;
   app.querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>{ SEC=b.dataset.s; screenSets(); });
-  const rl=document.getElementById('reload'); if(rl) rl.onclick=async()=>{ TOP=null;TOP_ERR=false;screenSections(); await fetchTop(); screenSections(); };
+  const rv=document.getElementById('rev'); if(rv) rv.onclick=()=>startReview(typeWrong(TYPE), null);
+  document.getElementById('back').onclick=screenTypes;
+  wireRank(gType(TYPE), screenSections);
 }
 
 /* ============ variantlar (joriy bo'lim ichida) ============ */
 function screenSets(){
-  whoBar(true);
-  if(TOP===null && !TOP_ERR) fetchTop().then(()=>{ if(document.getElementById('reload')) screenSets(); });
+  whoBar(2);
   const t=secStat(), u=U(), aw=secWrong();
   const sets=curSets();
   const last=u.last && u.last.sec===SEC ? u.last : null;
@@ -326,45 +396,53 @@ function screenSets(){
       <p class="hint">${t.no} ta xato · ${t.all-t.ok-t.no} ta so'z hali ishlanmagan</p>
       ${aw.length?`<button class="btn" id="rev">Xato so'zlarni takrorlash (${aw.length} ta)</button>`:''}
     </div>
-    ${rankCard()}
+    ${rankCard(gSec(SEC), secLabel(SEC)+' — reyting', t.all)}
     <div class="card">
       <div class="row">
-        <button class="btn ghost" id="tosec2">Boshqa qismga o'tish</button>
+        <button class="btn ghost" id="tosec">Boshqa bo'limga o'tish</button>
         <button class="btn ghost" id="reset">Hamma natijamni tozalash</button>
       </div>
     </div>`;
   app.querySelectorAll('.set').forEach(b=>b.onclick=()=>{state.set=sets[+b.dataset.i];screenRounds();});
   const r=document.getElementById('res'); if(r) r.onclick=()=>{state.set=setByUid(last.uid);startRound(last.round);};
   const rv=document.getElementById('rev'); if(rv) rv.onclick=()=>startReview(secWrong(),null);
-  const rl=document.getElementById('reload'); if(rl) rl.onclick=async()=>{ TOP=null;TOP_ERR=false;screenSets(); await fetchTop(); screenSets(); };
-  document.getElementById('tosec2').onclick=screenSections;
+  wireRank(gSec(SEC), screenSets);
+  document.getElementById('tosec').onclick=screenSections;
   document.getElementById('reset').onclick=()=>{
-    if(confirm('Barcha natijangiz (ikkala qism) o\'chiriladi. Davom etamizmi?')){ DB.users[DB.current]=blankUser(); save(); screenSets(); }
+    if(confirm('Barcha natijangiz (듣기 va 읽기) o\'chiriladi. Davom etamizmi?')){ DB.users[DB.current]=blankUser(); save(); screenSets(); }
   };
 }
 
-function rankCard(){
+function rankCard(game, title, total){
+  const rows=TOPS[game], err=TOPERR[game];
   let body;
-  if(TOP===null && !TOP_ERR) body='<p class="hint">Yuklanmoqda...</p>';
-  else if(TOP_ERR) body='<p class="hint">Reytingni yuklab bo\'lmadi. Internetni tekshiring.</p>';
-  else if(!TOP.length) body='<p class="hint">Hali hech kim natija yubormagan. Birinchi bo\'ling.</p>';
+  if(rows===undefined && !err) body='<p class="hint">Yuklanmoqda...</p>';
+  else if(err) body='<p class="hint">Reytingni yuklab bo\'lmadi. Internetni tekshiring.</p>';
+  else if(!rows || !rows.length) body='<p class="hint">Hali hech kim natija yubormagan. Birinchi bo\'ling.</p>';
   else body=`<table class="rank">
         <tr><th>#</th><th>Ism</th><th class="num">To'g'ri</th><th class="num">Ishlangan</th></tr>
-        ${TOP.map((r,i)=>`<tr class="${r.name===DB.current?'me':''}">
-          <td>${i+1}</td><td>${r.name}</td><td class="num">${r.ok}</td><td class="num">${r.done} / 575</td></tr>`).join('')}
+        ${rows.map((r,i)=>`<tr class="${r.name===DB.current?'me':''}">
+          <td>${i+1}</td><td>${r.name}</td><td class="num">${r.ok}</td><td class="num">${r.done} / ${total}</td></tr>`).join('')}
       </table>`;
   return `
     <div class="card">
-      <h2>Reyting</h2>
-      <p class="hint">Barcha o'quvchilar. Raund tugagach natijangiz avtomatik yuboriladi.</p>
+      <h2>${title}</h2>
+      <p class="hint">Raund tugagach natijangiz avtomatik yuboriladi.</p>
       ${body}
-      <button class="btn ghost" id="reload">Yangilash</button>
+      <button class="btn ghost" id="reload" data-g="${game}">Yangilash</button>
     </div>`;
 }
+// reytingni kerak bo'lganda yuklash + Yangilash tugmasi
+function wireRank(game, redraw){
+  if(TOPS[game]===undefined && !TOPERR[game]) fetchTop(game).then(()=>{ if(document.getElementById('reload')) redraw(); });
+  const rl=document.getElementById('reload');
+  if(rl) rl.onclick=async()=>{ delete TOPS[game]; delete TOPERR[game]; redraw(); await fetchTop(game); redraw(); };
+}
+
 
 /* ============ raundlar ============ */
 function screenRounds(){
-  whoBar(true);
+  whoBar(2);
   const rs=rounds(state.set), st=setStat(state.set), w=wrongOf(state.set), u=U();
   app.innerHTML=`
     <div class="card">
@@ -411,7 +489,7 @@ function commit(){
   const u=U();
   state.list.forEach((w,j)=>{ u.stats[w.uid][w.ko] = !state.miss[j]; });
   save();
-  pushScore().then(()=>{ TOP=null; });
+  pushScore().then(()=>{ Object.keys(TOPS).forEach(k=>delete TOPS[k]); Object.keys(TOPERR).forEach(k=>delete TOPERR[k]); });
 }
 
 /* ---- 1: tanishtiruv ---- */
@@ -564,7 +642,7 @@ function setDoneCard(){
 
 /* ---- start ---- */
 load();
-if(DB.current && DB.users[DB.current]) screenSections(); else screenName();
+if(DB.current && DB.users[DB.current]) screenTypes(); else screenName();
 </script>
 </body>
 </html>
