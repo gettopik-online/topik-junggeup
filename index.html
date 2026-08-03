@@ -621,7 +621,7 @@ function renderTest(set){
       au.onpause=()=>{ if(au.duration && au.currentTime>=au.duration-0.35) markEnded(); };
     }
     const answered = testState.answered[qi]!==undefined;
-    if(!answered){
+    if(!answered && testState.audioEnded[qi]){
       app.querySelectorAll(`[data-q="${qi}"]`).forEach((b,oi)=>{
         b.onclick=()=>{
           testState.answered[qi]=oi;
@@ -650,11 +650,13 @@ function renderTestQuestion(q, qi){
               :`<span class="hint">Matnni ko'rish uchun audioni oxirigacha tinglang.</span>`}
       </div>
       ${ended && testState.textShown[qi]?`<div class="list" style="margin:14px 0">${q.dialogue.map(([who,line])=>`<div><span class="k">${who}</span><span class="v">${line}</span></div>`).join('')}</div>`:''}
+      ${!answered && !ended?`<p class="hint" style="margin-top:12px">Javob tanlash uchun audioni oxirigacha tinglang.</p>`:''}
       <div class="opts" style="margin-top:14px">
         ${q.options.map((o,oi)=>{
           let cls='opt';
           if(answered){ if(oi===q.correct) cls+=' ok'; else if(oi===picked) cls+=' no'; }
-          return `<button class="${cls}" data-q="${qi}" ${answered?'disabled':''}>${oi+1}) ${o}</button>`;
+          const dis = answered || !ended;
+          return `<button class="${cls}" data-q="${qi}" ${dis?'disabled':''}>${oi+1}) ${o}</button>`;
         }).join('')}
       </div>
       ${answered?`<div style="margin-top:12px">
