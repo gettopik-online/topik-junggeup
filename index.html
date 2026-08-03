@@ -613,7 +613,12 @@ function renderTest(set){
     if(locked) return;
     const au=document.getElementById(`qaudio_${qi}`);
     if(au && !testState.audioEnded[qi]){
-      au.onended=()=>{ testState.audioEnded[qi]=true; renderTest(set); };
+      const markEnded=()=>{ if(testState.audioEnded[qi]) return; testState.audioEnded[qi]=true; renderTest(set); };
+      au.onended=markEnded;
+      // ba'zi brauzerlarda 'ended' hodisasi ishonchli chiqmasligi mumkin —
+      // shuning uchun oxiriga yetganini timeupdate/pause orqali ham tekshiramiz
+      au.ontimeupdate=()=>{ if(au.duration && au.currentTime>=au.duration-0.35) markEnded(); };
+      au.onpause=()=>{ if(au.duration && au.currentTime>=au.duration-0.35) markEnded(); };
     }
     const answered = testState.answered[qi]!==undefined;
     if(!answered){
