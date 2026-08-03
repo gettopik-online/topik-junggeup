@@ -532,34 +532,101 @@ function screenRounds(){
 }
 
 /* ============ TOPIK testi (tinglash + savol-javob) ============ */
+function quizGame(uid){ return GAME+'-quiz-'+uid; }
+// vaqt (soniya) va to'g'ri sonini bitta saralanadigan songa kodlaymiz:
+// yuqori to'g'ri son har doim ustun, teng bo'lganda tezroq (kam soniya) ustun turadi
+function encodeQuizScore(correct, seconds){
+  const t=Math.min(Math.max(Math.round(seconds),0),9999);
+  return correct*10000 + (10000-t);
+}
+function decodeQuizScore(v){
+  const correct=Math.floor(v/10000);
+  const seconds=10000-(v%10000);
+  return {correct, seconds};
+}
+async function pushQuizScore(set, correct, seconds){
+  try{
+    await fetch(API+'/score',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({game:quizGame(set.uid),name:DB.current,ok:encodeQuizScore(correct,seconds),done:4})});
+  }catch(e){ /* internet yo'q */ }
+}
+function quizRankCard(set){
+  const game=quizGame(set.uid);
+  const rows=TOPS[game], err=TOPERR[game];
+  let body;
+  if(rows===undefined && !err) body='<p class="hint">Yuklanmoqda...</p>';
+  else if(err) body='<p class="hint">Reytingni yuklab bo\'lmadi. Internetni tekshiring.</p>';
+  else if(!rows || !rows.length) body='<p class="hint">Hali hech kim test topshirmagan. Birinchi bo\'ling.</p>';
+  else body=`<table class="rank">
+        <tr><th>#</th><th>Ism</th><th class="num">To'g'ri</th><th class="num">Vaqt</th></tr>
+        ${rows.map((r,i)=>{ const d=decodeQuizScore(r.ok); return `<tr class="${r.name===DB.current?'me':''}">
+          <td>${i+1}</td><td>${r.name}</td><td class="num">${d.correct} / 4</td><td class="num">${d.seconds} s</td></tr>`; }).join('')}
+      </table>`;
+  return `
+    <div class="card">
+      <h2>${set.title} — test reytingi</h2>
+      <p class="hint">Ko'proq to'g'ri va tezroq ishlagan yuqorida turadi.</p>
+      ${body}
+      <button class="btn ghost" id="reload">Yangilash</button>
+    </div>`;
+}
+
 function screenTest(set){
   whoBar(2);
-  testState={answered:{}, showText:false};
+  testState={answered:{}, audioEnded:{}, textShown:{}, startTime:Date.now(), finished:false, result:null};
   renderTest(set);
+}
+function finishTest(set, t){
+  if(testState.finished) return;
+  testState.finished=true;
+  let correct=0;
+  t.questions.forEach((q,qi)=>{ if(testState.answered[qi]===q.correct) correct++; });
+  const seconds=Math.round((Date.now()-testState.startTime)/1000);
+  testState.result={correct, seconds};
+  pushQuizScore(set, correct, seconds).then(()=>{
+    delete TOPS[quizGame(set.uid)]; delete TOPERR[quizGame(set.uid)];
+    if(document.getElementById('reload')) renderTest(set);
+  });
 }
 function renderTest(set){
   const t=TESTS[set.uid];
   app.innerHTML=`
     <div class="card">
       <h2>${set.title} — test (17~20)</h2>
-      <p class="hint">Har savolning audiosini tinglab, javobni tanlang.</p>
-      <div class="row" style="margin-top:14px">
-        <button class="btn ghost" id="showtext">${testState.showText?'Matnni yashirish':'Matnni ko\'rish'}</button>
-      </div>
+      <p class="hint">Har savolning audiosini tinglab, javobni tanlang. Matn faqat audio tugagach ochiladi.</p>
     </div>
     ${t.questions.map((q,qi)=>renderTestQuestion(q,qi)).join('')}
+    ${testState.finished?`
+    <div class="card">
+      <h2>Test natijasi</h2>
+      <div class="score">${testState.result.correct} / ${t.questions.length}</div>
+      <p class="hint">Vaqt: ${testState.result.seconds} soniya</p>
+    </div>
+    ${quizRankCard(set)}`:''}
     <div class="card">
       <div class="row"><button class="btn ghost" id="totest_back">Raundlarga qaytish</button></div>
     </div>`;
-  document.getElementById('showtext').onclick=()=>{ testState.showText=!testState.showText; renderTest(set); };
   document.getElementById('totest_back').onclick=()=>screenRounds();
+  if(testState.finished) wireRank(quizGame(set.uid), ()=>renderTest(set));
   t.questions.forEach((q,qi)=>{
     const locked = qi>0 && testState.answered[qi-1]===undefined;
+    if(locked) return;
+    const au=document.getElementById(`qaudio_${qi}`);
+    if(au && !testState.audioEnded[qi]){
+      au.onended=()=>{ testState.audioEnded[qi]=true; renderTest(set); };
+    }
     const answered = testState.answered[qi]!==undefined;
-    if(locked || answered) return;
-    app.querySelectorAll(`[data-q="${qi}"]`).forEach((b,oi)=>{
-      b.onclick=()=>{ testState.answered[qi]=oi; renderTest(set); };
-    });
+    if(!answered){
+      app.querySelectorAll(`[data-q="${qi}"]`).forEach((b,oi)=>{
+        b.onclick=()=>{
+          testState.answered[qi]=oi;
+          if(qi===t.questions.length-1) finishTest(set, t);
+          renderTest(set);
+        };
+      });
+    }
+    const st=document.getElementById(`showtext_${qi}`);
+    if(st) st.onclick=()=>{ testState.textShown[qi]=!testState.textShown[qi]; renderTest(set); };
   });
 }
 function renderTestQuestion(q, qi){
@@ -568,12 +635,17 @@ function renderTestQuestion(q, qi){
     return `<div class="card"><h2>${q.num}-savol</h2><p class="hint">Avval oldingi savolga javob bering.</p></div>`;
   }
   const picked=testState.answered[qi], answered=picked!==undefined;
+  const ended=!!testState.audioEnded[qi];
   return `
     <div class="card">
       <h2>${q.num}-savol</h2>
-      <audio controls style="width:100%;margin-top:6px" src="${q.audio}">Brauzeringiz audio elementini qo'llab-quvvatlamaydi.</audio>
-      ${testState.showText?`<div class="list" style="margin:14px 0">${q.dialogue.map(([who,line])=>`<div><span class="k">${who}</span><span class="v">${line}</span></div>`).join('')}</div>`:''}
-      <div class="opts">
+      <audio id="qaudio_${qi}" controls style="width:100%;margin-top:6px" src="${q.audio}">Brauzeringiz audio elementini qo'llab-quvvatlamaydi.</audio>
+      <div class="row" style="margin-top:12px">
+        ${ended?`<button class="btn ghost" id="showtext_${qi}">${testState.textShown[qi]?'Matnni yashirish':'Matnni ko\'rish'}</button>`
+              :`<span class="hint">Matnni ko'rish uchun audioni oxirigacha tinglang.</span>`}
+      </div>
+      ${ended && testState.textShown[qi]?`<div class="list" style="margin:14px 0">${q.dialogue.map(([who,line])=>`<div><span class="k">${who}</span><span class="v">${line}</span></div>`).join('')}</div>`:''}
+      <div class="opts" style="margin-top:14px">
         ${q.options.map((o,oi)=>{
           let cls='opt';
           if(answered){ if(oi===q.correct) cls+=' ok'; else if(oi===picked) cls+=' no'; }
