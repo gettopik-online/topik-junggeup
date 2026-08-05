@@ -513,6 +513,11 @@ function wireRank(game, redraw){
 
 
 /* ============ raundlar ============ */
+function hasPendingTest(set, roundIdx){
+  const t=TESTS[set.uid]; if(!t || !t.questions[roundIdx]) return false;
+  const u=U(); const rec=(u.tests&&u.tests[set.uid])||{};
+  return rec[roundIdx]===undefined;
+}
 function screenRounds(){
   whoBar(2);
   const rs=rounds(state.set), st=setStat(state.set), w=wrongOf(state.set), u=U();
@@ -530,8 +535,10 @@ function screenRounds(){
       <h2>${state.set.title} — raundlar</h2>
       <p class="hint">${state.set.sub} · ${st.ok}/${st.all} to'g'ri · ${st.no} xato</p>
       <div class="rounds">
-        ${rs.map((r,i)=>{const rdone=r.every(w=>U().stats[state.set.uid][w.ko]!==undefined);return `<button class="round ${rdone?'done':''}" data-i="${i}">
-          <b>${i+1}-raund</b><span>${r.length} ta so'z</span></button>`}).join('')}
+        ${rs.map((r,i)=>{const rdone=r.every(w=>U().stats[state.set.uid][w.ko]!==undefined);
+          const label=(t&&t.questions[i])?t.questions[i].num+'-savol':(i+1)+'-raund';
+          return `<button class="round ${rdone?'done':''}" data-i="${i}">
+          <b>${label}</b><span>${r.length} ta so'z</span></button>`}).join('')}
       </div>
       ${pendingTests.length?`<div class="row" style="margin-top:14px">
         ${pendingTests.map(i=>`<button class="btn" data-test="${i}">${t.questions[i].num}-savol testini yechish</button>`).join('')}
@@ -607,7 +614,7 @@ function allTestsDoneCard(set){
 function screenSingleTest(set, qi){
   whoBar(2);
   const t=TESTS[set.uid], q=t.questions[qi];
-  singleTest={audioEnded:false, textShown:false, answered:undefined, startTime:Date.now()};
+  singleTest={audioEnded:false, canAnswer:false, textShown:false, answered:undefined, startTime:Date.now()};
   renderSingleTest(set, t, qi, q);
 }
 function finishSingleTest(set, t, qi, q){
@@ -627,6 +634,7 @@ function finishSingleTest(set, t, qi, q){
 function renderSingleTest(set, t, qi, q){
   const answered=singleTest.answered!==undefined;
   const ended=singleTest.audioEnded;
+  const canAnswer=singleTest.canAnswer;
   app.innerHTML=`
     <div class="card">
       <h2>${set.title} — ${q.num}-savol testi</h2>
@@ -637,12 +645,12 @@ function renderSingleTest(set, t, qi, q){
               :`<span class="hint">Matnni ko'rish uchun audioni oxirigacha tinglang.</span>`}
       </div>
       ${ended && singleTest.textShown?`<div class="list" style="margin:14px 0">${q.dialogue.map(([who,line])=>`<div><span class="k">${who}</span><span class="v">${line}</span></div>`).join('')}</div>`:''}
-      ${!answered && !ended?`<p class="hint" style="margin-top:12px">Javob tanlash uchun audioni oxirigacha tinglang.</p>`:''}
+      ${!answered && !canAnswer?`<p class="hint" id="answerHint" style="margin-top:12px">Javob tanlash uchun audioni oxirigacha tinglang.</p>`:''}
       <div class="opts" style="margin-top:14px">
         ${q.options.map((o,oi)=>{
           let cls='opt';
           if(answered){ if(oi===q.correct) cls+=' ok'; else if(oi===singleTest.answered) cls+=' no'; }
-          const dis=answered || !ended;
+          const dis=answered || !canAnswer;
           return `<button class="${cls}" data-o="${oi}" ${dis?'disabled':''}>${oi+1}) ${o}</button>`;
         }).join('')}
       </div>
@@ -652,17 +660,36 @@ function renderSingleTest(set, t, qi, q){
     </div>
     ${answered?`<div class="card"><div class="row"><button class="btn" id="solo_back">Raundlarga qaytish</button></div></div>`:''}`;
   const au=document.getElementById('soloaudio');
-  if(au && !singleTest.audioEnded){
+  // variant tugmalarini ijroni to'xtatmasdan yoqish (audio elementini qayta yaratmaslik uchun renderSingleTest chaqirilmaydi)
+  const enableAnswering=()=>{
+    if(answered) return;
+    const hint=document.getElementById('answerHint'); if(hint) hint.remove();
+    app.querySelectorAll('[data-o]').forEach(b=>{
+      b.disabled=false;
+      b.onclick=()=>{
+        singleTest.answered=+b.dataset.o;
+        finishSingleTest(set, t, qi, q);
+        renderSingleTest(set, t, qi, q);
+      };
+    });
+  };
+  if(au && (!singleTest.audioEnded || !singleTest.canAnswer)){
     const markEnded=()=>{ if(singleTest.audioEnded) return; singleTest.audioEnded=true; renderSingleTest(set,t,qi,q); };
+    const markCanAnswer=()=>{ if(singleTest.canAnswer) return; singleTest.canAnswer=true; enableAnswering(); };
     au.onended=markEnded;
-    // ba'zi brauzerlarda 'ended' hodisasi ishonchli chiqmasligi mumkin —
-    // shuning uchun oxiriga yetganini timeupdate/pause orqali ham tekshiramiz
-    au.ontimeupdate=()=>{ if(au.duration && au.currentTime>=au.duration-0.35) markEnded(); };
+    au.ontimeupdate=()=>{
+      if(!au.duration) return;
+      // javob belgilash tugashiga 10 soniya qolganda ochiladi (audio ijrosini uzmasdan)
+      if(au.currentTime>=au.duration-10) markCanAnswer();
+      // ba'zi brauzerlarda 'ended' hodisasi ishonchli chiqmasligi mumkin —
+      // shuning uchun matn uchun to'liq tugaganini timeupdate/pause orqali ham tekshiramiz
+      if(au.currentTime>=au.duration-0.35) markEnded();
+    };
     au.onpause=()=>{ if(au.duration && au.currentTime>=au.duration-0.35) markEnded(); };
   }
   const st=document.getElementById('soloShowText');
   if(st) st.onclick=()=>{ singleTest.textShown=!singleTest.textShown; renderSingleTest(set,t,qi,q); };
-  if(!answered && ended){
+  if(!answered && canAnswer){
     app.querySelectorAll('[data-o]').forEach(b=>{
       b.onclick=()=>{
         singleTest.answered=+b.dataset.o;
@@ -795,7 +822,11 @@ function phase3(){
     if(ok) state.correct++; else state.wrong.push(w);
     markMiss(state.i, ok);
     setTimeout(()=>{
-      if(state.i+1===state.list.length){ commit(); finish(); }
+      if(state.i+1===state.list.length){
+        commit();
+        if(state.mode==='round' && state.set && hasPendingTest(state.set, state.round)) screenSingleTest(state.set, state.round);
+        else finish();
+      }
       else { state.i++; phase3(); }
     }, ok?650:1800);
   }
