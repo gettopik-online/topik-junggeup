@@ -40,6 +40,7 @@
   .set .m{color:var(--muted);font-size:14px}
 
   .rounds{display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:10px;margin-top:6px}
+  .passage{background:#F7F9FC;border:1px solid var(--line);border-radius:11px;padding:18px 20px;margin:14px 0;font-size:16px;line-height:1.9}
   .round{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 10px;cursor:pointer;font:inherit;color:inherit;text-align:center}
   @media (hover:hover){ .round:hover{border-color:var(--accent)} }
   .round.done{border-color:var(--ok);color:var(--ok)}
@@ -142,6 +143,20 @@ const SECTIONS = [
 {id:"91",title:"91-TOPIK",sub:"9~12-savollar so'zlari",words:[["야경","tungi manzara"],["관광버스","sayohat avtobusi"],["운행","qatnov"],["안내","ma'lumot"],["즐기다","zavqlanmoq"],["관광 장소","sayohat joyi"],["광장","maydon"],["출발","jo'nab ketish"],["전망대","manzara maydonchasi"],["출발 시간","jo'nash vaqti"],["매일","har kuni"],["이용 요금","foydalanish narxi"],["성인","kattalar"],["학생","o'quvchi"],["이하","...dan kichik"],["무료","bepul"],["예약 방법","bron usuli"],["전날","bir kun oldin"],["홈페이지","veb-sayt"],["신청","ariza berish"],["요금","to'lov"],["오전","tushdan oldin"],["미리","oldindan"],["직장인","ishchi-xodim"],["출퇴근","ishga borib-kelish"],["이동 수단","harakat vositasi"],["자가용","shaxsiy avtomobil"],["버스","avtobus"],["지하철","metro"],["걸어서","piyoda"],["기타","boshqalar"],["응답하다","javob bermoq"],["비율","nisbat, ulush"],["줄다","kamaymoq"],["적다","kam"],["가장","eng"],["많다","ko'p"],["제일","eng"],["이용하다","foydalanmoq"],["작년","o'tgan yil"],["이어","ketidan, davomida"],["한 달간","bir oy davomida"],["찾아가다","borib xizmat ko'rsatmoq"],["자전거","velosiped"],["수리","ta'mir"],["센터","markaz"],["운영하다","boshqarmoq, olib bormoq"],["평일","ish kuni"],["여러","bir necha"],["지역","hudud"],["직접","bevosita"],["방문하다","tashrif buyurmoq"],["고치다","tuzatmoq"],["주말","dam olish kuni"],["제공하다","taqdim etmoq"],["전문","mutaxassis"],["기사","usta, xizmatchi"],["부품","ehtiyot qism"],["교체","almashtirish"],["필요하다","kerak bo'lmoq"],["저렴하다","arzon"],["가격","narx"],["바꾸다","almashtirmoq"],["생활화","odatga aylantirish"],["밝히다","bayon qilmoq, aytmoq"],["일 년 내내","yil bo'yi"],["피자","pitsa"],["가게","do'kon"],["사연","voqea, hikoya"],["잔잔하다","mayin, muloyim"],["감동","ta'sirlanish"],["최근","yaqinda"],["배달하다","yetkazib bermoq"],["오토바이","mototsikl"],["빗길","yomg'irli yo'l"],["미끄러지다","sirg'anib ketmoq"],["사고를 당하다","falokatga uchramoq"],["다행히","baxtga ko'ra"],["다치다","jarohatlanmoq"],["피해","zarar"],["망가지다","buzilmoq, sinmoq"],["늦어지다","kechikmoq"],["고객","mijoz"],["연락하다","bog'lanmoq"],["따뜻하다","iliq"],["전하다","yetkazmoq"],["취소하다","bekor qilmoq"]]},
 {id:"96",title:"96-TOPIK",sub:"9~12-savollar so'zlari",words:[["영상","video"],["노래","qo'shiq"],["대회","musobaqa"],["제출 방법","topshirish usuli"],["신청서","ariza varaqasi"],["전송","jo'natish"],["게시판","e'lonlar taxtasi"],["다운로드","yuklab olish"],["가능","mumkin"],["제출 기간","topshirish muddati"],["결과 발표","natijalar e'loni"],["게시","e'lon qilish, joylash"],["알려 주다","bildirmoq"],["내다","topshirmoq"],["내려받다","yuklab olmoq"],["직접","o'zi, bevosita"],["택배","pochta yetkazma"],["배송되다","yetkazilmoq"],["물건","buyum"],["기타","boshqalar"],["운동 용품","sport buyumlari"],["전자 제품","elektron mahsulot"],["화장품","kosmetika"],["식품","oziq-ovqat"],["의류","kiyim-kechak"],["조사 대상","so'rov obyekti"],["가장","eng"],["비율","nisbat, ulush"],["낮다","past"],["넘다","oshmoq"],["두 번째","ikkinchi"],["높다","yuqori"],["로봇","robot"],["연구소","ilmiy-tadqiqot markazi"],["겨울 방학","qishki ta'til"],["맞다","kutib olmoq"],["초등학생","boshlang'ich sinf o'quvchisi"],["교육 프로그램","ta'lim dasturi"],["운영하다","olib bormoq"],["참여하다","qatnashmoq"],["조종하다","boshqarmoq"],["체험","sinab ko'rish, tajriba"],["과학자","olim"],["희망하다","orzu qilmoq"],["특히","ayniqsa"],["반응","munosabat, qiziqish"],["내년","kelasi yil"],["진행하다","o'tkazmoq"],["예정","reja"],["학기 중","o'quv yili davomida"],["꿈꾸다","orzu qilmoq"],["인기","mashhurlik"],["지난","o'tgan"],["차량","transport vositasi"],["산길","tog' yo'li"],["미끄러지다","sirg'anib ketmoq"],["운전하다","haydamoq"],["의식을 잃다","hushidan ketmoq"],["함께","birga"],["개","it"],["빠져나오다","chiqib ketmoq"],["근처","yaqin atrof"],["마을","qishloq"],["달려가다","yugurib bormoq"],["주인","ega"],["계속","davomli"],["짖다","hurmoq (it)"],["이상하게 여기다","g'alati deb bilmoq"],["따라가다","ergashib bormoq"],["발견하다","topmoq"],["옮기다","ko'chirmoq"],["치료","davolash"],["보내다","jo'natmoq"],["등산","tog'ga chiqish"],["키우다","boqmoq, o'stirmoq"]]},
 {id:"102",title:"102-TOPIK",sub:"9~12-savollar so'zlari",words:[["그림책","rasmli kitob"],["읽어 주다","o'qib bermoq"],["자원봉사자","ko'ngilli"],["모집","jalb qilish, to'plash"],["어린이","bola"],["꿈","orzu"],["희망","umid"],["선물하다","sovg'a qilmoq"],["자격","malaka, huquq"],["고등학생","o'rta maktab o'quvchisi"],["대학생","talaba"],["외국인","chet ellik"],["모집 기간","to'plash muddati"],["신청 방법","ariza usuli"],["도서관","kutubxona"],["활동 기간","faoliyat muddati"],["봉사 활동","ko'ngillilik faoliyati"],["직접","o'zi, bevosita"],["참여하다","qatnashmoq"],["여행사","sayyohlik agentligi"],["선택하다","tanlamoq"],["중요하다","muhim"],["이용 후기","foydalanuvchi sharhi"],["기타","boshqalar"],["회사","kompaniya"],["규모","hajm, miqyos"],["여행 상품","sayohat paketi"],["다양성","xilma-xillik"],["가격","narx"],["설문 대상","so'rov obyekti"],["응답하다","javob bermoq"],["비율","nisbat, ulush"],["가장","eng"],["낮다","past"],["반을 넘다","yarmidan oshmoq"],["두 배 이상","ikki barobardan ortiq"],["적다","kam"],["지난달","o'tgan oy"],["문을 열다","ochilmoq"],["우표","pochta markasi"],["박물관","muzey"],["사랑을 받다","sevib qolinmoq"],["역사실","tarix zali"],["역사","tarix"],["한눈에","bir qarashda"],["어린이 체험실","bolalar tajriba xonasi"],["향기","hid, xushbo'ylik"],["맡다","hidlamoq"],["만지다","ushlab ko'rmoq"],["들어가다","kirmoq"],["편지","xat"],["넣다","solmoq"],["뒤","keyin"],["느리다","sekin"],["우체통","pochta qutisi"],["인기를 끌다","mashhur bo'lmoq"],["운영","boshqaruv"],["보내다","jo'natmoq"],["휴일","dam olish kuni"],["오르다","chiqmoq"],["경찰","politsiya"],["등산객","tog'ga chiquvchi"],["구조하다","qutqarmoq"],["경위","leytenant (politsiya unvoni)"],["정상","cho'qqi"],["여성","ayol"],["쓰러지다","yiqilmoq, hushsiz yotmoq"],["발견하다","topmoq"],["바로","darhol"],["체온","tana harorati"],["떨어지다","pasaymoq"],["겉옷","ustki kiyim"],["벗다","yechmoq"],["덮다","yopmoq, o'ramoq"],["신고하다","xabar bermoq"],["이후","keyin"],["구조대","qutqaruv guruhi"],["중턱","tog' yonbag'ri"],["대피소","boshpana"],["업다","ko'tarmoq (yelkaga)"],["뛰어 내려가다","yugurib tushmoq"],["이송되다","olib ketilmoq (bemor)"],["치료","davolash"],["되찾다","qaytadan tiklamoq"],["이동하다","harakatlanmoq"]]}
+]},
+{id:"read1618",type:"read",label:"16~18 · Bo'sh joyni to'ldirish",sets:[
+{id:"91",title:"91-TOPIK",sub:"16~18-testlar",roundSizes:[25,22,20],words:[
+["타조","tuyaqush"],["멀리서","uzoqdan"],["적","dushman"],["다가오다","yaqinlashmoq"],["머리","bosh"],["모래","qum"],["파묻다","ko'mmoq"],["위험","xavf"],["위기","xavfli holat, inqiroz"],["모르는 척하다","bilmaganga olmoq"],["피하다","qochmoq, chetlab o'tmoq"],["비유하다","o'xshatmoq"],["사실","aslida, haqiqat"],["행동","xatti-harakat"],["시각","ko'rish (sezgi)"],["청각","eshitish (sezgi)"],["발달하다","rivojlanmoq"],["울리다","aks-sado bermoq"],["발소리","qadam tovushi"],["파악하다","aniqlamoq, anglab olmoq"],["움직임","harakat"],["먹이","yem"],["구하다","topmoq"],["씻다","yuvmoq"],["공격하다","hujum qilmoq"],
+["섬유","tola"],["유연제","yumshatgich"],["막","parda, qatlam"],["씌우다","qoplamoq, kiydirmoq"],["옷감","mato"],["부드럽다","yumshoq"],["향기","xushbo'y hid"],["남기다","qoldirmoq"],["세탁하다","kir yuvmoq"],["넣다","solmoq"],["수건","sochiq"],["물기","namlik"],["흡수하다","shimmoq"],["소재","material"],["오히려","aksincha"],["없애다","yo'q qilmoq"],["색깔","rang"],["변형시키다","shaklini o'zgartirmoq"],["흡수력","shimish qobiliyati"],["떨어뜨리다","pasaytirmoq"],["촉감","teginish hissi"],["거칠다","dag'al"],
+["디지털 기기","raqamli qurilma"],["의존도","bog'liqlik darajasi"],["높아지다","oshmoq"],["무언가","biror narsa"],["직접","bevosita, o'zi"],["기억하다","eslab qolmoq"],["줄다","kamaymoq"],["이전","avval, oldingi"],["뇌","miya"],["사용하다","ishlatmoq"],["방식","usul"],["달라지다","o'zgarmoq"],["사용량","ishlatish miqdori"],["과거","o'tmish"],["단순히","shunchaki"],["정보","ma'lumot"],["압도적으로","keskin ustunlik bilan"],["처리하다","qayta ishlamoq"],["기억력","xotira quvvati"],["저장하다","saqlamoq"]]},
+{id:"96",title:"96-TOPIK",sub:"16~18-testlar",roundSizes:[24,20,23],words:[
+["장면","sahna, manzara"],["전화번호","telefon raqami"],["경우","holat"],["실제","haqiqiy, aslidagi"],["호기심","qiziquvchanlik"],["생기다","paydo bo'lmoq"],["일상생활","kundalik hayot"],["힘들어지다","qiyinlashmoq"],["영화진흥위원회","Kino rivojlantirish kengashi"],["확보하다","ta'minlab qo'ymoq"],["제작사","ishlab chiqaruvchi kompaniya"],["제공하다","taqdim etmoq"],["상관없다","aloqasi yo'q, farqi yo'q"],["화면","ekran"],["담다","aks ettirmoq, joylashtirmoq"],["피해","zarar"],["막다","oldini olmoq"],["제작 방법","ishlab chiqarish usuli"],["알리다","bildirmoq"],["관객","tomoshabin"],["요구","talab"],["반영하다","aks ettirmoq, hisobga olmoq"],["이와 같다","shunga o'xshash"],["~고자","...maqsadida"],
+["에너지","energiya"],["전문가","mutaxassis"],["지구","Yer (sayyora)"],["석유","neft"],["남다","qolmoq"],["경고하다","ogohlantirmoq"],["현재","hozirgi"],["앞으로","kelgusida"],["계속해서","to'xtovsiz"],["예측하다","bashorat qilmoq"],["기술","texnologiya"],["발전하다","rivojlanmoq"],["발견하다","topmoq, kashf qilmoq"],["가격","narx"],["상승하다","ko'tarilmoq"],["품질","sifat"],["가치","qiymat, qadr"],["떨어지다","pasaymoq"],["사용 가능 기간","foydalanish muddati"],["늘어나다","uzaymoq, ko'paymoq"],
+["홍수","suv toshqini"],["대비하다","tayyorgarlik ko'rmoq"],["조선 시대","Joseon davri"],["다리","ko'prik"],["돌","tosh"],["기둥","ustun"],["일정하다","bir xil, muayyan"],["간격","oraliq"],["표시","belgi"],["관리하다","boshqarmoq, qarab turmoq"],["담당자","mas'ul shaxs"],["강물","daryo suvi"],["수시로","vaqti-vaqti bilan"],["확인하다","tekshirmoq"],["대피하다","xavfsiz joyga chiqmoq"],["속도","tezlik"],["차이","farq"],["높이","balandlik"],["변화","o'zgarish"],["재료","material"],["만들다","yasamoq"],["오다","yog'moq (yomg'ir)"],["높아지다","ko'tarilmoq"]]},
+{id:"102",title:"102-TOPIK",sub:"16~18-testlar",roundSizes:[27,27,26],words:[
+["북극여우","qutb tulkisi"],["계절","fasl"],["털","jun"],["색깔","rang"],["바꾸다","o'zgartirmoq"],["눈","qor"],["흰색","oq rang"],["바위","qoya"],["흙","tuproq"],["갈색빛","jigarrang tusli"],["변화","o'zgarish"],["숨기다","yashirmoq"],["북극","Arktika, Shimoliy qutb"],["특수하다","o'ziga xos, maxsus"],["환경","muhit"],["천적","tabiiy dushman"],["보호하다","himoya qilmoq"],["사냥하다","ov qilmoq"],["동료","hamroh, sherik"],["무리를 이루다","to'da bo'lmoq"],["먹잇감","o'lja"],["몰래","yashirincha"],["다가가다","yaqinlashib bormoq"],["체온","tana harorati"],["적절히","munosib tarzda"],["유지하다","saqlab turmoq"],["발자국","iz (oyoq izi)"],
+["연필","qalam"],["잡다","ushlamoq"],["글씨","yozuv, xat"],["반듯하게","tekis, to'g'ri"],["어려움","qiyinchilik"],["느끼다","his qilmoq"],["어린 나이","yosh vaqt"],["전자 기기","elektron qurilma"],["장시간","uzoq vaqt"],["탓","sabab (salbiy)"],["단순히","shunchaki"],["누르다","bosmoq"],["밀다","surmoq"],["동작","harakat"],["반복하다","takrorlamoq"],["근육","mushak"],["소근육","mayda mushak"],["발달하다","rivojlanmoq"],["손가락","barmoq"],["움직이다","qimirlatmoq"],["놀이","o'yin"],["제대로","to'g'ri, yetarlicha"],["감싸다","o'ramoq"],["빠르게","tez"],["충분히","yetarlicha"],["완전히","butunlay"],["회복하다","tiklamoq"],
+["고인돌","dolmen (qadimgi tosh qabr)"],["청동기 시대","bronza davri"],["무덤","qabr"],["받침돌","tayanch tosh"],["세우다","tikmoq, o'rnatmoq"],["덮개돌","qopqoq tosh"],["얹다","ustiga qo'ymoq"],["형태","shakl, ko'rinish"],["무게","vazn"],["수십 톤","o'nlab tonna"],["달하다","yetmoq"],["거대하다","ulkan"],["운반하다","tashimoq"],["그만큼","shunchalik"],["힘","kuch"],["필요하다","kerak bo'lmoq"],["불러 모으다","chaqirib to'plamoq"],["시키다","buyurmoq, qildirmoq"],["대단하다","zo'r, ulkan"],["권력","hokimiyat"],["체력","jismoniy kuch"],["굉장히","juda, nihoyatda"],["약하다","kuchsiz"],["무기","qurol"],["제작하다","yasamoq"],["수명","umr davomiyligi"]]}
 ]}
 ];
 
@@ -165,6 +180,43 @@ function secType(id){ return SECTIONS.find(x=>x.id===id).type; }
 function setsOfType(t){ return typeSections(t).flatMap(s=>s.sets); }
 
 /* ============ TOPIK testlari (17~20, tinglash + savol-javob) ============ */
+/* 16~18 읽기 testlari: audio yo'q, matn ichidagi bo'sh joyni to'ldirish */
+const READTESTS = {
+"read1618-91":{questions:[
+{num:16, text:"타조는 멀리서 적이 다가와도 머리를 모래에 파묻고 있다. 그래서 위험이나 위기를 모르는 척 피하는 사람을 타조에 비유하곤 한다. 그런데 사실 타조는 (　　　　) 위해 이런 행동을 한다. 시각보다 청각이 발달한 타조는 땅에서 울리는 발소리를 듣고 적이 오는지를 파악하려는 것이다.",
+ options:["적의 움직임을 알기","먹이를 빨리 구하기","머리를 깨끗이 씻기","다른 타조를 공격하기"],correct:0,
+ explain:["To'g'ri — oxirgi jumla buni ochiq aytadi: tuyaqush yerdan kelayotgan <b>발소리</b>ni eshitib, <b>적이 오는지를 파악하려는 것</b>, ya'ni dushman harakatini bilish uchun shunday qiladi.","Noto'g'ri — yem topish haqida matnda umuman gap yo'q.","Noto'g'ri — boshini qumga tiqishi tozalash uchun emas; matnda yuvinish haqida hech narsa yo'q.","Noto'g'ri — matnda hujum emas, aksincha dushmanni sezish, ya'ni himoya haqida gapirilyapti."]},
+{num:17, text:"섬유 유연제는 섬유에 막을 씌워 옷감을 부드럽게 하고 향기도 남긴다. 그래서 세탁할 때 유연제를 넣는 사람들이 많다. 그런데 수건처럼 물기를 빠르게 흡수해야 하는 소재에는 유연제를 넣는 것이 좋은 것만은 아니다. 유연제가 만든 막이 오히려 섬유의 (　　　　) 때문이다.",
+ options:["향기를 없애기","색깔을 변형시키기","흡수력을 떨어뜨리기","촉감을 거칠게 만들기"],correct:2,
+ explain:["Noto'g'ri — teskarisi: yumshatgich <b>향기도 남긴다</b>, ya'ni hidni qoldiradi, yo'qotmaydi.","Noto'g'ri — rang o'zgarishi haqida matnda hech narsa aytilmagan.","To'g'ri — sochiq kabi <b>물기를 빠르게 흡수해야 하는</b> matolar haqida gap ketyapti, demak parda shimish qobiliyatini pasaytiradi.","Noto'g'ri — teskarisi: yumshatgich matoni <b>부드럽게</b> qiladi, dag'allashtirmaydi."]},
+{num:18, text:"디지털 기기에 대한 의존도가 높아지면서 사람들이 무언가 직접 기억해야 할 일은 줄었다. 그래서 이전보다 (　　　　) 생각할 수 있다. 그런데 뇌를 사용하는 방식이 이전과 달라졌을 뿐 사용량이 줄어든 것이 아니다. 과거에는 단순히 정보를 기억하는 데 뇌를 썼다면 이제는 과거보다 압도적으로 많아진 정보를 처리하는 데 사용하고 있는 것이다.",
+ options:["뇌를 덜 사용한다고","기억력이 좋아졌다고","저장해야 할 정보가 많다고","디지털 기기를 많이 쓴다고"],correct:0,
+ explain:["To'g'ri — keyingi jumla <b>그런데 … 사용량이 줄어든 것이 아니다</b> deb bu fikrni rad etadi. Demak bo'sh joyda aynan \"miyani kamroq ishlatamiz\" degan noto'g'ri tasavvur turishi kerak.","Noto'g'ri — eslab qolish zarurati kamaygani xotira yaxshilangani degani emas; matn buni aytmaydi.","Noto'g'ri — bu keyingi qismdagi fikr (hozir ma'lumot ko'p), lekin <b>그런데</b> bilan rad etiladigan fikr emas.","Noto'g'ri — bu allaqachon birinchi jumlada aytilgan, takrorlash mantiqan ortiqcha bo'ladi."]}
+]},
+"read1618-96":{questions:[
+{num:16, text:"영화 속 장면에서 전화번호가 나오는 경우가 있다. 이때 실제 전화번호를 사용하면 호기심에 전화하는 사람이 생겨서 이 번호를 사용하는 사람은 일상생활이 힘들어질 수 있다. 영화진흥위원회에서는 이와 같은 (　　　　) 영화에 나와도 상관없는 전화번호를 확보해 두고 이를 영화 제작사에 제공해 주고 있다.",
+ options:["사실을 화면에 담고자","피해를 막기 위해","제작 방법을 알리기 위해","관객 요구를 반영하고자"],correct:1,
+ explain:["Noto'g'ri — maqsad haqiqatni ekranda ko'rsatish emas; aksincha, haqiqiy raqamdan qochish.","To'g'ri — oldingi jumlada raqam egasining <b>일상생활이 힘들어질 수 있다</b> deb zarar tasvirlangan. <b>이와 같은 피해를 막기 위해</b> — o'sha zararning oldini olish uchun.","Noto'g'ri — film yasash usulini o'rgatish haqida gap yo'q.","Noto'g'ri — tomoshabin talabi emas, oddiy odamlarning tinchligi haqida gapirilyapti."]},
+{num:17, text:"30년 전 에너지 전문가들은 그로부터 40년 후에는 지구에 사용할 수 있는 석유가 남아 있지 않을 거라고 경고했다. 그러나 현재의 전문가들은 앞으로도 50년 이상은 계속해서 석유를 사용할 수 있을 거라고 예측한다. 이렇게 석유의 (　　　　) 이유는 석유를 찾는 기술이 발전했기 때문이다. 이 기술로 석유가 있는 곳을 더 많이 발견하게 된 것이다.",
+ options:["가격이 상승하고 있는","품질이 더 좋아진","가치가 계속해서 떨어지는","사용 가능 기간이 늘어난"],correct:3,
+ explain:["Noto'g'ri — narx haqida matnda umuman gap yo'q.","Noto'g'ri — neft sifati emas, uni topish texnologiyasi yaxshilangan.","Noto'g'ri — qiymati pasaygani aytilmagan; gap zaxira muddati haqida.","To'g'ri — ilgari <b>40년 후</b> tugaydi deyilgan edi, endi <b>50년 이상</b> ishlatish mumkin deyilyapti. Demak foydalanish muddati uzaygan."]},
+{num:18, text:"수표교는 홍수 피해에 대비하기 위해 만든 조선 시대의 다리이다. 돌로 된 수표교의 기둥에는 일정한 간격마다 표시가 되어 있어서 (　　　　) 쉽게 알 수 있었다. 수표교를 관리하는 담당자는 비가 오면 강물이 높아지는지를 수시로 확인하고 홍수가 날 것 같으면 사람들에게 알려 대피하도록 했다.",
+ options:["강물의 속도 차이를","강물의 높이 변화를","다리를 만든 재료를","다리 기둥의 간격을"],correct:1,
+ explain:["Noto'g'ri — ustundagi belgilar tezlikni emas, sathni o'lchaydi.","To'g'ri — keyingi jumlada mas'ul odam <b>강물이 높아지는지를 수시로 확인하고</b> deyilgan, demak belgilar suv balandligining o'zgarishini ko'rsatadi.","Noto'g'ri — materialning o'zi (tosh) birinchi jumlada aytilgan, belgilar bunga kerak emas.","Noto'g'ri — oraliq belgilarning o'zi; ular yordamida bilinadigan narsa boshqa bo'lishi kerak."]}
+]},
+"read1618-102":{questions:[
+{num:16, text:"북극여우는 계절에 따라 털 색깔을 바꾸는 동물이다. 북극여우의 털은 겨울에는 눈과 같은 흰색으로, 여름에는 바위나 흙과 비슷한 갈색빛으로 바뀐다. 이러한 털 색깔의 변화로 북극여우는 몸을 숨길 곳이 없는 북극의 특수한 환경에서도 천적으로부터 자신을 보호하고 사냥할 때 (　　　　) 수 있다.",
+ options:["동료와 무리를 이룰","먹잇감에 몰래 다가갈","체온을 적절히 유지할","발자국을 남기지 않을"],correct:1,
+ explain:["Noto'g'ri — to'da bo'lish rangga bog'liq emas; matnda bu haqda gap yo'q.","To'g'ri — jun rangi atrofga qorishib ketadi. Bu <b>천적으로부터 자신을 보호하고</b> — himoya, ov paytida esa o'ljaga sezdirmay yaqinlashish imkonini beradi.","Noto'g'ri — bu issiqlik saqlash bo'lardi, lekin matn rangning <b>yashirinish</b> vazifasi haqida.","Noto'g'ri — jun rangi iz qoldirishga ta'sir qilmaydi."]},
+{num:17, text:"요즘 연필을 잡고 글씨를 반듯하게 쓰는 것에 어려움을 느끼는 아이가 많다. 어린 나이부터 전자 기기를 장시간 사용한 탓이다. 전자 기기의 화면을 단순히 누르거나 미는 동작을 반복하다 보면 손에 있는 근육을 (　　　　) 못한다. 그래서 전문가들은 소근육이 발달하는 11세까지 손가락을 움직여서 하는 놀이를 많이 하도록 하는 것이 좋다고 말한다.",
+ options:["제대로 감싸지","빠르게 줄이지","충분히 사용하지","완전히 회복하지"],correct:2,
+ explain:["Noto'g'ri — mushakni \"o'rash\" ma'no jihatdan mos kelmaydi.","Noto'g'ri — mushakni kamaytirish maqsad emas; muammo aksincha ishlatilmasligida.","To'g'ri — yechim sifatida <b>손가락을 움직여서 하는 놀이</b> tavsiya qilinadi, demak muammo mushakning yetarlicha ishlatilmasligi.","Noto'g'ri — tiklanish haqida gap yo'q; mushak shikastlangani aytilmagan."]},
+{num:18, text:"고인돌은 옛날 청동기 시대의 무덤이다. 고인돌은 받침돌 두 개를 세우고 그 위에 덮개돌을 얹은 형태인데 덮개돌 하나의 무게가 수십 톤에 달하는 것도 있다. 이와 같이 거대한 돌을 운반하고 세우려면 그만큼 많은 사람들의 힘이 필요했다. 그래서 고인돌은 사람들을 불러 모아 무덤 만드는 일을 시킬 수 있을 정도로 (　　　　) 사람의 무덤이었을 것으로 보인다.",
+ options:["대단한 권력을 가진","체력이 굉장히 약한","무기를 잘 제작하는","수명이 남들보다 짧은"],correct:0,
+ explain:["To'g'ri — <b>사람들을 불러 모아 … 일을 시킬 수 있을 정도로</b> — ko'p odamni to'plab ishlata olish katta hokimiyat belgisi.","Noto'g'ri — jismoniy kuchsizlik bilan qabrning kattaligi bog'lanmaydi.","Noto'g'ri — qurol yasash haqida matnda hech narsa yo'q.","Noto'g'ri — umr uzunligi haqida gap ketmagan."]}
+]}
+};
+
 const TESTS = {
 "listen1720-83":{questions:[
 {num:17,audio:"audio83.mp3/17.mp3",dialogue:[["남자","수미야, 내가 보낸 메일 못 받았어?"],["여자","아니. 받았어. 어떻게 쓸까 생각하느라고 아직 답장을 못 보냈어."],["남자","난 메일이 안 갔나 걱정했어. 기다렸는데 받았다는 말이라도 해 주지."]],
@@ -478,7 +530,10 @@ function screenSets(){
         <button class="btn ghost" id="tosec">Boshqa bo'limga o'tish</button>
       </div>
     </div>`;
-  app.querySelectorAll('.set').forEach(b=>b.onclick=()=>{state.set=sets[+b.dataset.i];screenRounds();});
+  app.querySelectorAll('.set').forEach(b=>b.onclick=()=>{
+    state.set=sets[+b.dataset.i];
+    if(isReadTestSet(state.set)) screenTestList(state.set); else screenRounds();
+  });
   const r=document.getElementById('res'); if(r) r.onclick=()=>{state.set=setByUid(last.uid);startRound(last.round);};
   const rv=document.getElementById('rev'); if(rv) rv.onclick=()=>startReview(secWrong(),null);
   wireRank(gSec(SEC), screenSets);
@@ -557,6 +612,186 @@ function screenRounds(){
 }
 
 /* ============ TOPIK testi (tinglash + savol-javob) ============ */
+/* ============ 16~18 읽기 testlari ============
+   So'zlar ixtiyoriy: o'quvchi to'g'ridan-to'g'ri testni ishlashi ham mumkin.
+   Reyting variant bo'yicha (3 ta savol birga), har urinish alohida qator. */
+let readTest=null;
+function isReadTestSet(set){ return !!(set && READTESTS[set.uid]); }
+function readRec(set){ const u=U(); return (u.tests && u.tests[set.uid]) || {}; }
+function readAttemptName(n){ return n<=1 ? DB.current : DB.current+' ('+n+')'; }
+function isMyRow(name){ return name===DB.current || name.indexOf(DB.current+' (')===0; }
+function readAttemptCount(set){ const u=U(); return (u.rtAttempts && u.rtAttempts[set.uid]) || 0; }
+function fmtSec(s){ s=Math.max(0,Math.round(s)); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
+function readTotals(set){
+  const t=READTESTS[set.uid], rec=readRec(set);
+  let correct=0, seconds=0, done=0;
+  t.questions.forEach((q,i)=>{ const r=rec[i]; if(r){ done++; if(r.correct) correct++; seconds+=r.seconds; } });
+  return {correct, seconds, done, all:t.questions.length};
+}
+
+function screenTestList(set){
+  whoBar(2);
+  state.set=set;
+  const t=READTESTS[set.uid], rs=rounds(set), st=U().stats[set.uid];
+  app.innerHTML=`
+    <div class="card">
+      <h2>${set.title} — 16~18-testlar</h2>
+      <p class="hint">Har bir testning so'zlarini oldindan mashq qilishingiz mumkin, lekin bu shart emas.</p>
+      <div class="rounds">
+        ${t.questions.map((q,i)=>{
+          const r=readRec(set)[i];
+          const wd=rs[i].every(w=>st[w.ko]!==undefined);
+          return `<button class="round ${r?'done':''}" data-i="${i}">
+            <b>${q.num}-test</b>
+            <span>${r?(r.correct?"to'g'ri":'xato'):'ishlanmagan'}${wd?" · so'zlar ✓":''}</span>
+          </button>`;}).join('')}
+      </div>
+      <div class="row" style="margin-top:14px">
+        <button class="btn ghost" id="back">Variantlar</button>
+      </div>
+    </div>
+    ${readResultCard(set)}
+    ${readRankCard(set)}`;
+  app.querySelectorAll('.round').forEach(b=>b.onclick=()=>screenTestItem(set,+b.dataset.i));
+  document.getElementById('back').onclick=screenSets;
+  const rt=document.getElementById('retry');
+  if(rt) rt.onclick=()=>{ const u=U(); if(u.tests) delete u.tests[set.uid]; save(); screenTestList(set); };
+  wireRank(quizGame(set.uid), ()=>screenTestList(set));
+}
+
+function screenTestItem(set, qi){
+  whoBar(2);
+  state.set=set; state.round=qi;
+  const q=READTESTS[set.uid].questions[qi];
+  const rs=rounds(set), st=U().stats[set.uid], r=readRec(set)[qi];
+  const total=rs[qi].length;
+  const done=rs[qi].filter(w=>st[w.ko]!==undefined).length;
+  const ok=rs[qi].filter(w=>st[w.ko]===true).length;
+  app.innerHTML=`
+    <div class="card">
+      <h2>${set.title} · ${q.num}-test</h2>
+      <p class="hint">Xohlasangiz avval so'zlarni mashq qiling, xohlamasangiz to'g'ridan-to'g'ri testga o'ting.</p>
+      <div class="sets" style="margin-top:12px">
+        <button class="set" id="towords">
+          <div class="n" style="font-size:19px">${q.num}-test so'zlari</div>
+          <div class="m">${total} ta so'z</div>
+          <div class="m" style="color:${done?'var(--ink)':'var(--muted)'}">${done?ok+'/'+total+" to'g'ri":'boshlanmagan'}</div>
+        </button>
+        <button class="set" id="totest">
+          <div class="n" style="font-size:19px">${q.num}-test</div>
+          <div class="m">${r?(r.correct?"To'g'ri ishlangan":'Xato ishlangan'):'Hali ishlanmagan'}</div>
+        </button>
+      </div>
+      <div class="row" style="margin-top:14px">
+        <button class="btn ghost" id="back">Testlar ro'yxati</button>
+      </div>
+    </div>`;
+  document.getElementById('towords').onclick=()=>startRound(qi);
+  document.getElementById('totest').onclick=()=>screenReadTest(set,qi);
+  document.getElementById('back').onclick=()=>screenTestList(set);
+}
+
+function screenReadTest(set, qi){
+  whoBar(2);
+  readTest={set, qi, answered:undefined, startTime:Date.now()};
+  renderReadTest();
+}
+function renderReadTest(){
+  const set=readTest.set, qi=readTest.qi;
+  const q=READTESTS[set.uid].questions[qi];
+  const answered=readTest.answered!==undefined;
+  app.innerHTML=`
+    <div class="card">
+      <h2>${set.title} · ${q.num}-test</h2>
+      <p class="hint">(　　　　)에 들어갈 말로 가장 알맞은 것을 고르십시오.</p>
+      <div class="passage">${q.text}</div>
+      <div class="opts" style="margin-top:14px">
+        ${q.options.map((o,oi)=>{
+          let cls='opt';
+          if(answered){ if(oi===q.correct) cls+=' ok'; else if(oi===readTest.answered) cls+=' no'; }
+          return `<button class="${cls}" data-o="${oi}" ${answered?'disabled':''}>${oi+1}) ${o}</button>`;
+        }).join('')}
+      </div>
+      ${answered?`<div style="margin-top:12px">
+        ${q.options.map((o,oi)=>`<p class="fb ${oi===q.correct?'ok':'no'}" style="margin-top:8px"><b>${oi+1})</b> ${q.explain[oi]}</p>`).join('')}
+      </div>`:''}
+    </div>
+    ${answered?`<div class="card"><div class="row">
+        <button class="btn" id="tolist">Testlar ro'yxati</button>
+        <button class="btn ghost" id="toitem">${q.num}-testga qaytish</button>
+      </div></div>`:''}`;
+  if(!answered){
+    app.querySelectorAll('[data-o]').forEach(b=>b.onclick=()=>{
+      readTest.answered=+b.dataset.o;
+      finishReadTest();
+      renderReadTest();
+    });
+  } else {
+    document.getElementById('tolist').onclick=()=>screenTestList(set);
+    document.getElementById('toitem').onclick=()=>screenTestItem(set,qi);
+  }
+}
+function finishReadTest(){
+  const set=readTest.set, qi=readTest.qi;
+  const q=READTESTS[set.uid].questions[qi], u=U();
+  if(!u.tests[set.uid]) u.tests[set.uid]={};
+  u.tests[set.uid][qi]={correct:readTest.answered===q.correct,
+                        seconds:Math.round((Date.now()-readTest.startTime)/1000)};
+  save();
+  const t=readTotals(set);
+  if(t.done===t.all) pushReadAttempt(set, t.correct, t.seconds);
+}
+async function pushReadAttempt(set, correct, seconds){
+  const u=U();
+  if(!u.rtAttempts) u.rtAttempts={};
+  const n=(u.rtAttempts[set.uid]||0)+1; u.rtAttempts[set.uid]=n; save();
+  const g=quizGame(set.uid);
+  delete TOPS[g]; delete TOPERR[g];
+  try{
+    await fetch(API+'/score',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({game:g, name:readAttemptName(n),
+        ok:Math.min(99,Math.max(0,correct)), done:Math.min(99999,Math.max(0,Math.round(seconds)))})});
+  }catch(e){ /* internet yo'q */ }
+}
+function readResultCard(set){
+  const t=readTotals(set);
+  if(t.done<t.all) return '';
+  const n=readAttemptCount(set);
+  return `
+    <div class="card">
+      <h2>${set.title} — test natijasi</h2>
+      <div class="score">${t.correct} / ${t.all}</div>
+      <p class="hint">Jami vaqt: ${fmtSec(t.seconds)}${n?` · ${n}-urinish · reytingda <b>${readAttemptName(n)}</b>`:''}</p>
+      <div class="row"><button class="btn ghost" id="retry">Qaytadan ishlash</button></div>
+    </div>`;
+}
+function readRankCard(set){
+  const g=quizGame(set.uid), total=READTESTS[set.uid].questions.length;
+  const rows=TOPS[g], err=TOPERR[g];
+  let body;
+  if(rows===undefined && !err) body='<p class="hint">Yuklanmoqda...</p>';
+  else if(err) body='<p class="hint">Reytingni yuklab bo\'lmadi. Internetni tekshiring.</p>';
+  else {
+    const list=(rows||[]).filter(r=>typeof r.ok==='number' && r.ok>=0 && r.ok<=total)
+                         .sort((a,b)=> b.ok-a.ok || a.done-b.done);
+    if(!list.length) body='<p class="hint">Hali hech kim test topshirmagan. Birinchi bo\'ling.</p>';
+    else body=`<table class="rank">
+        <tr><th>#</th><th>Ism</th><th class="num">To'g'ri</th><th class="num">Vaqt</th></tr>
+        ${list.map((r,i)=>`<tr class="${isMyRow(r.name)?'me':''}">
+          <td>${i+1}</td><td>${r.name}</td><td class="num">${r.ok} / ${total}</td><td class="num">${fmtSec(r.done)}</td></tr>`).join('')}
+      </table>`;
+  }
+  const n=readAttemptCount(set);
+  return `
+    <div class="card">
+      <h2>${set.title} — test reytingi</h2>
+      <p class="hint">Har safar ishlaganingiz alohida qator bo'lib chiqadi.</p>
+      ${n>1?`<p class="hint" style="color:var(--accent);font-weight:600">Siz bu testni ${n} marta ishladingiz.</p>`:''}
+      ${body}
+      <button class="btn ghost" id="reload">Yangilash</button>
+    </div>`;
+}
+
 function quizGame(uid){ return GAME+'-quiz-'+uid; }
 // vaqt (soniya) va to'g'ri sonini bitta saralanadigan songa kodlaymiz:
 // yuqori to'g'ri son har doim ustun, teng bo'lganda tezroq (kam soniya) ustun turadi
@@ -713,8 +948,16 @@ function startReview(list, set){
   state.i=0; state.correct=0; state.wrong=[]; state.miss={};
   phase1();
 }
-function title(){ return state.mode==='review' ? 'Xatolarni takrorlash' : state.set.title+' · '+(state.round+1)+'-raund'; }
-function backScreen(){ return state.mode==='review' && !state.set ? screenSets : screenRounds; }
+function roundLabel(set, i){
+  return isReadTestSet(set) ? READTESTS[set.uid].questions[i].num+"-test so'zlari" : (i+1)+'-raund';
+}
+function title(){ return state.mode==='review' ? 'Xatolarni takrorlash' : state.set.title+' · '+roundLabel(state.set, state.round); }
+function backScreen(){
+  if(state.mode==='review' && !state.set) return screenSets;
+  // 16~18 bo'limida so'zlardan chiqilganda o'sha testning ekraniga qaytadi
+  if(isReadTestSet(state.set)) return ()=>screenTestItem(state.set, state.round);
+  return screenRounds;
+}
 
 function bar(phase, pct){
   const names=["Tanishtiruv","Variant tanlash","Yozish"];
@@ -847,7 +1090,7 @@ function finish(){
   const hasNext=state.mode==='round' && state.round+1<rs.length;
   app.innerHTML=`
     <div class="card">
-      <h2>${state.mode==='review'?'Takrorlash tugadi':state.round+1+'-raund tugadi'}</h2>
+      <h2>${state.mode==='review'?'Takrorlash tugadi':roundLabel(state.set,state.round)+' tugadi'}</h2>
       <div class="score">${state.correct} / ${n}</div>
       <p class="hint">Yozish bosqichi — ${pct}%</p>
       ${missed.length?`
@@ -857,8 +1100,8 @@ function finish(){
         `:`<p class="hint" style="margin-top:14px">Hamma so'z to'g'ri.</p>`}
       <div class="row">
         <button class="btn ghost" id="again">${state.mode==='review'?'Qaytadan':'Raundni qayta yechish'}</button>
-        ${hasNext?`<button class="btn ghost" id="next">${state.round+2}-raund</button>`:''}
-        <button class="btn ghost" id="exit">${state.set?'Raundlar':"Variantlar"}</button>
+        ${hasNext?`<button class="btn ghost" id="next">${roundLabel(state.set,state.round+1)}</button>`:''}
+        <button class="btn ghost" id="exit">${!state.set?'Variantlar':(isReadTestSet(state.set)?'Testga qaytish':'Raundlar')}</button>
       </div>
     </div>
     ${setDoneCard()}`;
